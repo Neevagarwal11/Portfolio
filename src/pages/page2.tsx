@@ -9,6 +9,7 @@ function page2(event: {
 }) {
   gsap.registerPlugin(ScrollTrigger);
 
+  // Btn Img
   useLayoutEffect(() => {
       let ctx = gsap.context(() => {
         const t = gsap.timeline({
@@ -29,7 +30,7 @@ function page2(event: {
     }, []);
 
 
-    // Button
+    // Button Movement
     
       const magnetoRef = useRef<HTMLDivElement>(null)
       const btntextRef = useRef<HTMLDivElement>(null)
@@ -48,7 +49,7 @@ useLayoutEffect(() => {
       
       let boundBox = magneto.getBoundingClientRect();
       const magnetoStrength =60
-      const magnetoTextStrength =100
+      const magnetoTextStrength =40
       
       const newX = ((event.clientX - boundBox.left)/magneto.offsetWidth) - 0.6
       const newY = ((event.clientY - boundBox.top)/magneto.offsetHeight) - 0.6
@@ -114,11 +115,11 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
       </div>
 
 
-      <div className='right w-[50%] h-[100%] relative right-0  flex items-center justify-center' >
+      <div ref={magnetoRef}   className='right  w-[50%] h-[100%] relative right-0  flex items-center justify-center' >
 
 {/* Button */}
-        <div id='container'className='btn container cursor-pointer flex items-center justify-center h-[40%] w-[30%] '>
-          <div  ref={magnetoRef} id='img' className='scale-[1.2] rotate-img absolute flex items-center justify-center'>
+        <div id='container'  className='btn container cursor-pointer flex items-center justify-center h-[40%] w-[30%] '>
+          <div id='img' className='scale-[1.2] rotate-img absolute flex items-center justify-center'>
           <img src={img} alt="" ></img> 
           </div>
           <div ref={btntextRef} className='rounded-[200px] w-[50%] p-[1em] h-[50%] text-2xl font-["bodoni"] font-[800] text-[#B09E94]' id='btn-text'>PUSH ME!</div>
