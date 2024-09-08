@@ -2,6 +2,9 @@ import React from "react";
 import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-with-collision";
 import Navbar from '../components/navbar'
 import Page2 from '../pages/page2'
+import Page3 from '../pages/page3'
+
+
 export function BackgroundBeamsWithCollisionDemo() {
   return (
     <>
@@ -18,6 +21,7 @@ export function BackgroundBeamsWithCollisionDemo() {
       </div>
     </BackgroundBeamsWithCollision>
     <Page2 clientY={undefined} clientX={undefined}></Page2>
+    <Page3></Page3>
     </>
   );
 }

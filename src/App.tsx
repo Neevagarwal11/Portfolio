@@ -8,7 +8,6 @@ function App() {
   return (
     <div className='' data-scroll-container>
       <LandingPage></LandingPage>
-      {/* <Page2 clientY={undefined} clientX={undefined}></Page2> */}
     </div>
 
   )
