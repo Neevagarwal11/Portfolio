@@ -29,8 +29,10 @@
   src: url(../Fonts/DegularDisplay-BlackItalic.otf);
 }
 
-body{
+html , body{
   overflow-x: hidden;
+  height: 100%;
+
 }
 /* Ensure the scroll container takes up full height */
 [data-scroll-container] {

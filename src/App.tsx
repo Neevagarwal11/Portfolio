@@ -1,16 +1,19 @@
-import React, { useEffect, useRef } from 'react'
-import LandingPage from './pages/landingpage'
-import Page2 from './pages/page2'
+  import React, { useEffect, useRef } from 'react'
+  import LandingPage from './pages/landingpage'
+  import Page2 from './pages/page2'
 
 
+  function App() {
+      
 
-function App() {
-  return (
-    <div className='' data-scroll-container>
-      <LandingPage></LandingPage>
-    </div>
+    return (
+      
+      <div className='w-full h-screen'>
+        <LandingPage></LandingPage>
+      </div>
 
-  )
-}
+    )
+  }
 
-export default App
+
+  export default App
