@@ -1,8 +1,9 @@
-import React, { useEffect, useRef , useLayoutEffect, useState } from 'react'
+import React, { useEffect, useRef , useLayoutEffect, useState, useContext } from 'react'
 import Page2Spindel from '../components/Page2-spindel'
 import {gsap , Power3 , Elastic} from 'gsap';
 import img from '../assets/Explore Me.svg'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,16 +110,13 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
 
 //Parallax 
   const para = useRef<HTMLDivElement>(null)
-  const [scrollY, setscrollY] = useState(0);
+  const [scrollY, setScrollY] = useState<number>(0); // Ensure it's a number
 
-  useEffect(() => {
 
-    if(para.current){
-      const speed = 2.9;
-      para.current.style.transform = `translateY(${scrollY * speed}px)`;
-    }
-  } , [scrollY]);
+ 
 
+  
+  
 
   return (
     <div className='h-screen z-10 w-full bg-[#1D1917]  text-white '>
@@ -131,10 +129,10 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
         <p ref={para} className='w-[65%] font-[900] text-[#E3D9C9] text-2xl absolute '>I'm an Indian undergraduate student and a passionate web developer, specializing in creating dynamic and responsive websites. I'm always eager to learn new technologies and improve my skills in both front-end and back-end development. </p>
       </div>
 
-
-      <div ref={magnetoRef}   className='right  w-[50%] h-[100%] relative right-0  flex items-center justify-center' >
-
 {/* Button */}
+
+
+      <div ref={magnetoRef}  className='right  w-[50%] h-[100%] relative right-0  flex items-center justify-center' >
         <div id='container'  className='btn container cursor-pointer flex items-center justify-center h-[40%] w-[30%] '>
           <div id='img' className='scale-[1.2] rotate-img absolute flex items-center justify-center'>
           <img src={img} alt="" ></img> 
