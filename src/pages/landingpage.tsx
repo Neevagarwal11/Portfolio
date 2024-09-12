@@ -5,7 +5,7 @@ import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Page3 from '../pages/page3'
-
+import Page2_5 from '../pages/page2.5'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,6 +41,7 @@ function landingpage() {
         <BackgroundBeamsWithCollisionDemo>
         </BackgroundBeamsWithCollisionDemo>        
         <Page2 clientY={undefined} clientX={undefined}></Page2>
+        <Page2_5></Page2_5>
         {/* <Page3></Page3>  */}
     </div>
   )

@@ -46,3 +46,16 @@ html , body{
   align-items: center;
   justify-content: center;
 }
+
+
+#scroller{
+  animation: scroll 15s infinite linear;
+}
+@keyframes scroll {
+    0%{
+      transform: translateX(0%);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+}
