@@ -16,9 +16,9 @@ function landingpage() {
   useEffect(() => {
     // Initialize Lenis
     const lenis = new Lenis({
-      duration: 3.8, // Speed of the scroll (higher value means slower scroll)
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
-      smoothWheel: true, // Enable smooth scrolling for mouse wheel
+      duration: 3.8, 
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+      smoothWheel: true,
     });
 
     function raf(time:number) {
@@ -41,7 +41,7 @@ function landingpage() {
         <BackgroundBeamsWithCollisionDemo>
         </BackgroundBeamsWithCollisionDemo>        
         <Page2 clientY={undefined} clientX={undefined}></Page2>
-        {/* <Page3></Page3> */}
+        {/* <Page3></Page3>  */}
     </div>
   )
 }

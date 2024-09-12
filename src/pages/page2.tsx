@@ -1,13 +1,16 @@
-import React, { useEffect, useRef , useLayoutEffect } from 'react'
+import React, { useEffect, useRef , useLayoutEffect, useState } from 'react'
 import Page2Spindel from '../components/Page2-spindel'
 import {gsap , Power3 , Elastic} from 'gsap';
 import img from '../assets/Explore Me.svg'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
+
 function page2(event: {
+
+
   clientY: any; clientX: any; 
 }) {
-  gsap.registerPlugin(ScrollTrigger);
 
   // Btn Img
   useLayoutEffect(() => {
@@ -103,6 +106,20 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
   
 }, []);
 
+
+//Parallax 
+  const para = useRef<HTMLDivElement>(null)
+  const [scrollY, setscrollY] = useState(0);
+
+  useEffect(() => {
+
+    if(para.current){
+      const speed = 2.9;
+      para.current.style.transform = `translateY(${scrollY * speed}px)`;
+    }
+  } , [scrollY]);
+
+
   return (
     <div className='h-screen z-10 w-full bg-[#1D1917]  text-white '>
       <Page2Spindel></Page2Spindel>
@@ -111,7 +128,7 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
     <div className='p2-container w-full h-[70%] relative bottom-0 flex  flex-row'>
 
       <div className='left flex items-center justify-center font-["aftesto"] w-[50%] h-[100%] relative left-0'>
-        <p className='w-[65%] font-[900] text-[#E3D9C9] text-2xl'>I'm an Indian undergraduate student and a passionate web developer, specializing in creating dynamic and responsive websites. I'm always eager to learn new technologies and improve my skills in both front-end and back-end development. </p>
+        <p ref={para} className='w-[65%] font-[900] text-[#E3D9C9] text-2xl absolute '>I'm an Indian undergraduate student and a passionate web developer, specializing in creating dynamic and responsive websites. I'm always eager to learn new technologies and improve my skills in both front-end and back-end development. </p>
       </div>
 
 
