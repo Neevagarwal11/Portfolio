@@ -1,35 +1,35 @@
-import { OrbitControls, useTexture } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import React from 'react'
-import Page3roller from '../components/Page3roller';
-import { Bloom, EffectComposer, ToneMapping } from '@react-three/postprocessing';
-import { Preload, PerformanceMonitor } from '@react-three/drei';
-
-
+import React, { ReactNode } from 'react'
+import ochi from '../assets/ochi.png'
 function page3() {
-  return (
-    <div className='w-full h-screen '>
-      
-    <Canvas flat className='bg-[#1D1917]'  camera={{ fov: 30 }}>
-      <ambientLight/>
-        <Page3roller></Page3roller>
-        <PerformanceMonitor>
-          <Preload all />
-          <Page3roller />
-        </PerformanceMonitor>
-        <EffectComposer>
-        <Bloom
-        mipmapBlur
-        intensity={1.5} // The bloom intensity.
-        luminanceThreshold={0.23} // luminance threshold. Raise this value to mask out darker elements in the scene.
-        luminanceSmoothing={0.24} // smoothness of the luminance threshold. Range is [0, 1]
-        />
-     <ToneMapping adaptive={false}></ToneMapping>
-</EffectComposer>
+    const arr = ["Ochi" , "sdfdf"]
+    function item(value: { name: string; url: string }, index: number, array: { name: string; url: string }[]): ReactNode {
+        throw new Error('Function not implemented.')
+    }
 
-  
-    </Canvas>
-      </div>
+  return (
+    <div className='w-full bg-[#1D1917] h-[300vh] border-2'>
+        {/* Best-Project Array */}
+        {[
+            {name:"Ochi" , url:"#" , img:ochi , para:"This is a React built website with modern animations using various JS Libraries and concepts."},
+            {name:"Lazarev" , url:"#"}
+
+        ].map((item ,index) => (
+                <div className='w-full h-[100vh] border-2 flex items-center justify-center border-green-400'>
+                <div className={`internal h-[100%] w-[85%] absolute flex items-center border-2 ${index %2 ===0 ? "flex-row" :"flex-row-reverse"}`}>
+
+                <div className={`img-box w-[45%] h-[60%] rounded-[30px] border-2 absolute`}>
+                    <img src={item.img} alt="" />
+                </div>
+                <div className={`text-8xl translate-y-[10vw]  absolute ${index %2 ===0 ? "left-[45%]" :"right-[45%]"}`}>{item.name}</div>
+                <div className={`text-2xl font-["para"]  border-2 w-[40%] absolute ${index %2 ===0 ? "right-2" :"left-2"}`}><p>{item.para}</p></div>
+
+                </div>
+
+
+                </div>
+            
+        ))}
+    </div>
   )
 }
 

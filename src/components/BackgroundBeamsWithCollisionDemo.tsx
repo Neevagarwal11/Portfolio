@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-with-collision";
 import Navbar from '../components/navbar'
 import Page2 from '../pages/page2'
-import Page3 from '../pages/page3'
+import Page3 from '../pages/projects'
 import { useEffect } from 'react';
 
 
