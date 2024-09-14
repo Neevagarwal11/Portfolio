@@ -18,12 +18,9 @@ function page3() {
     // GSAP under this 
 
     const projects =[
-        
         {color:"#BCD559" },
         {color:"#C8632F"},
         {color:"#0DA34E" },
-        {color:"#0DA34E" },
-
     ]
 
     useLayoutEffect(() =>{
@@ -36,7 +33,7 @@ function page3() {
 
                         gsap.to("#main" , {
                             backgroundColor:project.color,
-                            
+
                             duration:0.7,
                             // opacity: 0.5, 
                             backdropFilter:"blur(150px)",
@@ -74,7 +71,7 @@ function page3() {
 
 
   return (
-    <div  ref ={main} id='main' className='w-full bg-[#1D1917] h-[300vh] border-2 p-0 overflow-hidden'>
+    <div  ref ={main} id='main' className='w-full h-[300vh] bg-[#1D1917]  flex flex-col'>
         {/* Best-Project Array */}
         {[
             {name:"Lazarev" , url:"#" , img:lazarev, para:"Website for an AI & ML Agency to advertise their work. Built with HTML , CSS and many modern concepts of JS making it look modern." },
@@ -82,8 +79,8 @@ function page3() {
             {name:"Ochi" , url:"#" , img:ochi , para:"This is a React built website with modern animations using various JS Libraries and concepts." , },
 
         ].map((item ,index) => (
-                <div className='w-full h-[100vh] flex items-center justify-center'>
-                <div ref={(el) => (section.current[index] = el)} className={`internal z-10 h-[100%] w-[85%] absolute border-2 overflow-hidden flex items-center ${index %2 ===0 ? "flex-row" :"flex-row-reverse"}`}>
+            <div className='w-full h-[100vh] flex items-center justify-center relative'>
+                <div ref={(el) => (section.current[index] = el)} className={`internal z-10 h-[100%] w-[85%] absolute overflow-hidden flex items-center ${index %2 ===0 ? "flex-row" :"flex-row-reverse"}`}>
  
                 <div  className={`img-box  w-[40vw] h-[45vh]  flex items-center   rounded-[30px] overflow-hidden absolute bg-cover bg-center`}>
                     <img src={item.img} alt="" className='scale-[1.15] bg-cover w-full h-full '/>
@@ -94,7 +91,7 @@ function page3() {
                 </div>
 
 
-                </div>
+            </div>
             
         ))}
     </div>
