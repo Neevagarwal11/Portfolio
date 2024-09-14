@@ -18,12 +18,12 @@ function page2(event: {
       let ctx = gsap.context(() => {
         const t = gsap.timeline({
           scrollTrigger: {
-            trigger:magnetoRef.current, // Set trigger to the reference element
+            trigger:magnetoRef.current, 
             scrub: 1,
           },
         });
   
-        t.to("#img>img", { // Properly scoped selector within the context
+        t.to("#img>img", { 
           rotate: '350deg',
           duration:5,
           scrub:2,
