@@ -5,9 +5,12 @@ import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ww from '../assets/wordweb.png'
 import Magneto from '../components/Magneto'
+import { useNavigate } from 'react-router-dom';
+
 
 function page3() {
-    const arr = ["Ochi" , "sdfdf"]
+    const navigate = useNavigate(); 
+
     function item(value: { name: string; url: string }, index: number, array: { name: string; url: string }[]): ReactNode {
         throw new Error('Function not implemented.')
     }
@@ -115,18 +118,21 @@ useLayoutEffect(() =>{
     <div  ref ={main} id='main' className='w-full h-[370vh] bg-[#1D1917]  flex flex-col'>
         {/* Best-Project Array */}
         {[
-            {name:"Lazarev" , url:"#" , img:lazarev, para:"Website for an AI & ML Agency to advertise their work. Built with HTML , CSS and many modern concepts of JS making it look modern." },
-            {name:"WordWeb" , url:"#" , img:ww, para:"Website to encourage the learning of new languages. This was a project built for the language class in the 1st year of college." },
-            {name:"Ochi" , url:"#" , img:ochi , para:"This is a React built website with modern animations using various JS Libraries and concepts." , },
+            {name:"Lazarev" , url:"https://neev-animated.netlify.app/" , img:lazarev, para:"Website for an AI & ML Agency to advertise their work. Built with HTML , CSS and many modern concepts of JS making it look modern." },
+            {name:"WordWeb" , url:"https://wordwebnkpgs.netlify.app/" , img:ww, para:"Website to encourage the learning of new languages. This was a project built for the language class in the 1st year of college." },
+            {name:"Ochi" , url:"https://react-animated-neev.netlify.app/" , img:ochi , para:"This is a React built website with modern animations using various JS Libraries and concepts." , },
 
         ].map((item ,index) => (
             <div id='internal' className='w-full h-[100vh] flex items-center justify-center relative'>
-                <div ref={(el) => (section.current[index] = el)} className={`internal z-10 h-[100%] w-[85%] absolute overflow-hidden flex items-center ${index %2 ===0 ? "flex-row" :"flex-row-reverse"}`}>
+                <div ref={(el) => (section.current[index] = el)} className={`internal z-10 h-[100%] w-[85%] absolute  overflow-hidden  flex items-center ${index %2 ===0 ? "flex-row" :"flex-row-reverse"}`}>
  
-                <div  ref={(el) => (image.current[index] = el)}  className={`img-box  w-[40vw] h-[45vh] translate-y-[5vw]  flex items-center   rounded-[30px] overflow-hidden absolute bg-cover bg-center`}>
-                    <img src={item.img} alt="" id='image'  className='scale-[1.4] bg-cover w-full h-[100%] '/>
+
+                <a href={item.url} target='_blank'>
+                <div  ref={(el) => (image.current[index] = el)}  className={`img-box  w-[40vw] h-[45vh] relative translate-y-[5vw]  flex items-center   rounded-[30px] overflow-hidden absolute bg-cover bg-center`}>
+                    <img src={item.img} alt="img not found" id='image'  className='scale-[1.4] bg-cover absolute w-full h-[100%] '/>
                 </div>
-                <div id='head' className={`text-8xl opacity-[0.3] text-[#DACEBA] font-[500] translate-y-[10vw]  absolute ${index %2 ===0 ? "left-[45%]" :"right-[45%]"}`}>{item.name}</div>
+                </a>
+                <div id='head' className={`text-8xl opacity-[0.3] text-[#DACEBA] font-[500] translate-y-[10vw]  absolute ${index %2 ===0 ? "left-[50%]" :"right-[45%]"}`}>{item.name}</div>
                 <div  className={`text-2xl font-["para"] text-[#DACEBA]  w-[40%] absolute ${index %2 ===0 ? "right-2" :"left-2"}`}><p>{item.para}</p></div>
 
                 </div>
@@ -136,13 +142,15 @@ useLayoutEffect(() =>{
             
         ))}
 
+
+{/* View All Projects Button */}
         <div className='w-full h-[50vh]  flex items-center justify-center'>
 
 
         <Magneto>
 
             <div className='w-[20vw] h-[15vh]  flex items-center justify-center cursor-pointer '>
-                <div id='button' className='button relative bg-[#F2F2F2]  w-[100%] flex items-center justify-center border-2 h-[60%] overflow-hidden  rounded-[100px]'>
+                <div id='button'onClick={() => navigate("/works")} className='button relative bg-[#F2F2F2]  w-[100%] flex items-center justify-center border-2 h-[60%] overflow-hidden  rounded-[100px]'>
                     <div id='btntext' className='text-2xl w-full h-full text-black font-[800] flex items-center justify-center'>View All Projects.</div>
                 </div>
             </div>

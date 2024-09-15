@@ -65,7 +65,7 @@ function page4() {
 
               {tech.map((item , index) =>(
                 <div className=' h-[70%] px-4 gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
-                  <div className='img   h-[90%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
+                  <div className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
 
                   <div className='name  w-[70%] h-full text-2xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
                 </div>
@@ -85,7 +85,7 @@ function page4() {
 
               {web.map((item , index) =>(
                 <div className=' h-[100%] px-4 gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
-                  <div className='img  h-[90%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
+                  <div className='img  h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
 
                   <div className='name  h-full text-2xl w-[80%] font-["degular-light"] flex items-center justify-center '>{item.name}</div>
                 </div>
@@ -105,7 +105,7 @@ function page4() {
 
               {tools.map((item , index) =>(
                 <div className=' h-[100%] px-4 gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
-                  <div className='img  h-[90%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
+                  <div className='img  h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
 
                   <div className='name  w-[70%] h-full text-2xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
                 </div>

@@ -9,7 +9,6 @@ import Page2_5 from '../pages/page2.5'
 import Page3 from '../pages/page3'
 import Page4 from '../pages/page4'
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 function landingpage() {
@@ -41,12 +40,16 @@ function landingpage() {
 
   return (
     <div ref={scrollContainerRef} className='w-full h-screen z-10 bg-[#1D1917] font-["grand"] text-6xl text-[#B09E94] absolute'>
-        <BackgroundBeamsWithCollisionDemo>
-        </BackgroundBeamsWithCollisionDemo>        
+
+
+        <BackgroundBeamsWithCollisionDemo></BackgroundBeamsWithCollisionDemo>        
         <Page2 clientY={undefined} clientX={undefined}></Page2>
         <Page2_5></Page2_5>
         <Page3></Page3> 
         <Page4></Page4>
+
+
+
     </div>
   )
 }
