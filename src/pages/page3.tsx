@@ -4,7 +4,7 @@ import lazarev from '../assets/lazarev.png'
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ww from '../assets/wordweb.png'
-
+import Magneto from '../components/Magneto'
 
 function page3() {
     const arr = ["Ochi" , "sdfdf"]
@@ -112,7 +112,7 @@ useLayoutEffect(() =>{
 
 
   return (
-    <div  ref ={main} id='main' className='w-full h-[300vh] bg-[#1D1917]  flex flex-col'>
+    <div  ref ={main} id='main' className='w-full h-[370vh] bg-[#1D1917]  flex flex-col'>
         {/* Best-Project Array */}
         {[
             {name:"Lazarev" , url:"#" , img:lazarev, para:"Website for an AI & ML Agency to advertise their work. Built with HTML , CSS and many modern concepts of JS making it look modern." },
@@ -135,6 +135,20 @@ useLayoutEffect(() =>{
             </div>
             
         ))}
+
+        <div className='w-full h-[50vh]  flex items-center justify-center'>
+
+
+        <Magneto>
+
+            <div className='w-[20vw] h-[15vh]  flex items-center justify-center cursor-pointer '>
+                <div id='button' className='button relative bg-[#F2F2F2]  w-[100%] flex items-center justify-center border-2 h-[60%] overflow-hidden  rounded-[100px]'>
+                    <div id='btntext' className='text-2xl w-full h-full text-black font-[800] flex items-center justify-center'>View All Projects.</div>
+                </div>
+            </div>
+        </Magneto>
+        
+        </div>
     </div>
   )
 }

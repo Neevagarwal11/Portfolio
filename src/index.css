@@ -59,3 +59,43 @@ html , body{
       transform: translateX(-100%);
     }
 }
+
+
+/* Button Animation */
+
+#btntext::before{
+    content:"";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color:  #083D47 ;
+    z-index: -2;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 300ms ease-in-out;
+    border-radius: 100px;
+    
+}
+
+#btntext:hover::before,
+#btntext:focus::before
+{
+    transform: scaleY(1);
+}
+
+#btntext:hover,
+#btntext:focus{
+  color: #B09E94;
+}
+
+
+#button{
+  z-index: 2;
+}
+#btntext{
+  z-index: 1;
+  transition: ease-in-out 300ms;
+}
+

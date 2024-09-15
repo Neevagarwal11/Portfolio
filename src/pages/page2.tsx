@@ -34,7 +34,7 @@ function page2(event: {
     }, []);
 
 
-    // Button Movement
+    // Button Movement ---->MAGNETO
     
       const magnetoRef = useRef<HTMLDivElement>(null)
       const btntextRef = useRef<HTMLDivElement>(null)
