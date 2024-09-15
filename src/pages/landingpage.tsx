@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Projects from './projects'
 import Page2_5 from '../pages/page2.5'
 import Page3 from '../pages/page3'
-import Page3_5 from '../pages/page3.5'
+import Page4 from '../pages/page4'
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -46,7 +46,7 @@ function landingpage() {
         <Page2 clientY={undefined} clientX={undefined}></Page2>
         <Page2_5></Page2_5>
         <Page3></Page3> 
-        {/* <Page3_5></Page3_5> */}
+        <Page4></Page4>
     </div>
   )
 }

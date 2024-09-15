@@ -18,6 +18,10 @@
   font-family: bodoni;
   src: url(../Fonts/bodoni.zip);
 }
+@font-face {
+  font-family: degular-light;
+  src: url(../Fonts/DegularDisplay-Light.otf);
+}
 
 @font-face {
   font-family: logo;
