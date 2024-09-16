@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ww from '../assets/wordweb.png'
 import Magneto from '../components/Magneto'
 import { useNavigate } from 'react-router-dom';
-
+import Button from '../components/buttonhover'
 
 function page3() {
     const navigate = useNavigate(); 
@@ -114,6 +114,49 @@ useLayoutEffect(() =>{
 })
 
 
+//Cursor Button Hover
+
+const btn= useRef<HTMLDivElement>(null)
+
+useLayoutEffect(() =>{
+  
+  const cursor = document.querySelector("#cursor");
+  const button = btn.current
+
+
+  if(button){
+   
+    const MouseEnter =() =>{
+      gsap.to(cursor,{
+        scale:2.9,
+        opacity:0.3,
+        duration:0.3,
+        zIndex:1
+      })
+    }
+   
+    const MouseLeave =() =>{
+      gsap.to(cursor,{
+        scale:1,
+        opacity:1,
+        duration:0.3,
+        zIndex:100
+      })
+    }
+
+    button.addEventListener('mouseenter' , MouseEnter)
+    button.addEventListener('mouseleave' , MouseLeave)
+
+
+    return () =>{
+      button.removeEventListener('mouseleave' , MouseLeave)
+    }
+ 
+
+  }
+    
+  })
+
   return (
     <div  ref ={main} id='main' className='w-full h-[370vh] bg-[#1D1917]  flex flex-col'>
         {/* Best-Project Array */}
@@ -124,7 +167,7 @@ useLayoutEffect(() =>{
 
         ].map((item ,index) => (
             <div id='internal' className='w-full h-[100vh] flex items-center justify-center relative'>
-                <div ref={(el) => (section.current[index] = el)} className={`internal z-10 h-[100%] w-[85%] absolute  overflow-hidden  flex items-center ${index %2 ===0 ? "flex-row" :"flex-row-reverse"}`}>
+                <div ref={(el) => (section.current[index] = el)} className={`internal  h-[100%] w-[85%] absolute  overflow-hidden  flex items-center ${index %2 ===0 ? "flex-row" :"flex-row-reverse"}`}>
  
 
                 <a href={item.url} target='_blank'>
@@ -147,10 +190,10 @@ useLayoutEffect(() =>{
         <div className='w-full h-[50vh]  flex items-center justify-center'>
 
 
-        <Magneto>
 
+        <Magneto>
             <div className='w-[20vw] h-[15vh]  flex items-center justify-center cursor-pointer '>
-                <div id='button'onClick={() => navigate("/works")} className='button relative bg-[#F2F2F2]  w-[100%] flex items-center justify-center border-2 h-[60%] overflow-hidden  rounded-[100px]'>
+                <div id='button'onClick={() => navigate("/works")}  className='button relative bg-[#F2F2F2]  w-[100%] flex items-center justify-center border-2 h-[60%] overflow-hidden  rounded-[100px]'>
                     <div id='btntext' className='text-2xl w-full h-full text-black font-[800] flex items-center justify-center'>View All Projects.</div>
                 </div>
             </div>

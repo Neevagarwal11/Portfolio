@@ -50,7 +50,21 @@ useLayoutEffect(() => {
     const {clientX , clientY} = event;
     gsap.to(cursor , {x:clientX , y:clientY})
   }
+  const onMouseLeave =(event:any) =>{
+    gsap.to(cursor,{
+      opacity:0,
+      duration:0.3
+    })
+  }
+  const onMouseEnter = (e:any) =>{
+    gsap.to(cursor , {
+      opacity:1,
+      duration:0.3
+    })
+  }
+  document.addEventListener('mouseenter',onMouseEnter)
   document.addEventListener('mousemove' , onMouseMove) 
+  document.addEventListener('mouseleave' , onMouseLeave) 
 
   
 })
@@ -64,7 +78,7 @@ useLayoutEffect(() => {
 
 
     <div ref={scrollContainerRef} className='w-full cursor-none h-screen z-10 bg-[#1D1917] font-["grand"] text-6xl text-[#B09E94] absolute'>
-      <motion.div id='cursor' className='cursor w-[17px] h-[17px] rounded-full border-2 border-[#B09E94] bg-[#B09E94] fixed  z-[100]'></motion.div>
+      <div id='cursor' className='cursor w-[13px] h-[13px] rounded-full border-2 border-[#D8D1CB] bg-[#D8D1CB] fixed  z-[100]'></div>
 
         <BackgroundBeamsWithCollisionDemo></BackgroundBeamsWithCollisionDemo>        
         <Page2 clientY={undefined} clientX={undefined}></Page2>

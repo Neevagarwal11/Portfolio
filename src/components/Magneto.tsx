@@ -26,8 +26,8 @@ if (magneto && btntext){
     // const activateBtn = (event: { clientX: number; clientY: number; }) =>{
     
     let boundBox = magneto.getBoundingClientRect();
-    const magnetoStrength =60
-    const magnetoTextStrength =40
+    const magnetoStrength =30
+    const magnetoTextStrength =60
     
     const newX = ((event.clientX - boundBox.left)/magneto.offsetWidth) - 0.6
     const newY = ((event.clientY - boundBox.top)/magneto.offsetHeight) - 0.6

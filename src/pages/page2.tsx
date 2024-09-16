@@ -4,7 +4,6 @@ import {gsap , Power3 , Elastic} from 'gsap';
 import img from '../assets/Explore Me.svg'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useNavigate } from 'react-router-dom';
-
 gsap.registerPlugin(ScrollTrigger);
 
 function page2(event: {
@@ -107,6 +106,48 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
   
 }, []);
 
+//Cursor Effect
+const btn= useRef<HTMLDivElement>(null)
+
+useLayoutEffect(() =>{
+  
+  const cursor = document.querySelector("#cursor");
+  const button = btn.current
+
+
+  if(button){
+   
+    const MouseEnter =() =>{
+      gsap.to(cursor,{
+        scale:2.9,
+        opacity:0.3,
+        duration:0.3,
+        zIndex:0 
+      })
+    }
+   
+    const MouseLeave =() =>{
+      gsap.to(cursor,{
+        scale:1,
+        opacity:1,
+        duration:0.3,
+        zIndex:100
+      })
+    }
+
+    button.addEventListener('mouseenter' , MouseEnter)
+    button.addEventListener('mouseleave' , MouseLeave)
+
+
+    return () =>{
+      button.removeEventListener('mouseleave' , MouseLeave)
+    }
+ 
+
+  }
+    
+  })
+  
 
 
   
@@ -127,7 +168,7 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
 
 
       <div ref={magnetoRef}  className='right  w-[50%] h-[100%] relative right-0  flex items-center justify-center' >
-        <div id='container' onClick={() => navigate('/explore')}  className='btn container cursor-pointer flex items-center justify-center h-[40%] w-[30%] '>
+        <div id='container' onClick={() => navigate('/explore')}  ref={btn} className='btn cursor-none z-10  container cursor-pointer flex items-center justify-center h-[40%] w-[30%] '>
           <div id='img' className='scale-[1.2] rotate-img absolute flex items-center justify-center'>
           <img src={img} alt="" ></img> 
           </div>
