@@ -1,4 +1,4 @@
-import React, { useEffect  , useRef} from 'react'
+import React, { useEffect  , useLayoutEffect, useRef, useState} from 'react'
 import {BackgroundBeamsWithCollisionDemo} from '../components/BackgroundBeamsWithCollisionDemo' 
 import Page2 from './page2'
 import Lenis from '@studio-freight/lenis';
@@ -8,6 +8,7 @@ import Projects from './projects'
 import Page2_5 from '../pages/page2.5'
 import Page3 from '../pages/page3'
 import Page4 from '../pages/page4'
+import { motion } from 'framer-motion'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,9 +39,32 @@ function landingpage() {
 //Lenis 
 
 
-  return (
-    <div ref={scrollContainerRef} className='w-full h-screen z-10 bg-[#1D1917] font-["grand"] text-6xl text-[#B09E94] absolute'>
+//Cursor
 
+useLayoutEffect(() => {
+
+  const cursor = document.querySelector("#cursor");
+
+
+  const onMouseMove = (event: any) =>{
+    const {clientX , clientY} = event;
+    gsap.to(cursor , {x:clientX , y:clientY})
+  }
+  document.addEventListener('mousemove' , onMouseMove) 
+
+  
+})
+
+
+
+
+
+  return (
+    <>
+
+
+    <div ref={scrollContainerRef} className='w-full cursor-none h-screen z-10 bg-[#1D1917] font-["grand"] text-6xl text-[#B09E94] absolute'>
+      <motion.div id='cursor' className='cursor w-[17px] h-[17px] rounded-full border-2 border-[#B09E94] bg-[#B09E94] fixed  z-[100]'></motion.div>
 
         <BackgroundBeamsWithCollisionDemo></BackgroundBeamsWithCollisionDemo>        
         <Page2 clientY={undefined} clientX={undefined}></Page2>
@@ -51,6 +75,7 @@ function landingpage() {
 
 
     </div>
+    </>
   )
 }
 

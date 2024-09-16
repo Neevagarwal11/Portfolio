@@ -47,7 +47,7 @@ useLayoutEffect(() => {
   //mouse move
   
   if (magneto && btntext){
-    magneto?.addEventListener('mousemove' , (event:MouseEvent) =>{
+    magneto?.addEventListener("mousemove" , (event:MouseEvent) =>{
 
       // const activateBtn = (event: { clientX: number; clientY: number; }) =>{
       
