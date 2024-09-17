@@ -2,8 +2,10 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import Image1 from '../assets/canva.jpeg'; // Assuming you're still using an image asset
-
-
+import gal1 from '../assets/gallery1.jpg'
+import gal2 from '../assets/gallery2.jpg'
+import gal3 from '../assets/gal3.jpg'
+import gal4 from '../assets/gal4.png'
 export function ExpandableCardDemo() {
     const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
     const id = useId();
@@ -42,7 +44,7 @@ export function ExpandableCardDemo() {
         </AnimatePresence>
         <AnimatePresence>
           {active && typeof active === "object" ? (
-            <div className="fixed inset-0  grid place-items-center z-[100]">
+            <div className="fixed inset-0   grid place-items-center z-[100]">
               <motion.button
                 key={`button-${active.title}-${id}`}
                 layout
@@ -74,7 +76,7 @@ export function ExpandableCardDemo() {
   alt={active.title}
   width="500"
   height="500"
-  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover "
 />
                 </motion.div>
    
@@ -83,37 +85,26 @@ export function ExpandableCardDemo() {
                     <div className="">
                       <motion.h3
                         layoutId={`title-${active.title}-${id}`}
-                        className="font-medium text-neutral-700 dark:text-neutral-200 text-base"
+                        className="font-[700] text-[1.6vw] font-['aftesto'] font-[#1D1917] dark:text-neutral-200 text-base"
                       >
                         {active.title}
                       </motion.h3>
                       <motion.p
                         layoutId={`description-${active.description}-${id}`}
-                        className="text-neutral-600 dark:text-neutral-400 text-base"
+                        className="text-neutral-600 dark:text-neutral-400 text-[1.4vw] font-[600] font-['degular-light'] text-base"
                       >
                         {active.description}
                       </motion.p>
                     </div>
    
-                    <motion.a
-                      layout
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      href={active.ctaLink}
-                      target="_blank"
-                      className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
-                    >
-                      {active.ctaText}
-                    </motion.a>
                   </div>
-                  <div className="pt-4 relative px-4">
+                  <div className="pt-0 relative px-4">
                     <motion.div
                       layout
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                      className="text-neutral-600 text-[1.1vw] text-xs md:text-sm-medium:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                     >
                       {typeof active.content === "function"
                         ? active.content()
@@ -126,44 +117,32 @@ export function ExpandableCardDemo() {
           ) : null}
         </AnimatePresence>
 
-{/* Main Flex of the gallery element */}
+{/* Main Grind of the gallery element */}
+        <div className="flex w-full justify-center">
 
-        <ul className="mt-[2vh] border-2 justify-around w-full  flex border-green-400 items-start gap-0">
+        <ul className="mt-[6vh] w-[95%] grid grid-cols-3 gap-x-0 items-center justify-center  gap-y-6">
           {cards.map((card, index) => (
-            <motion.div
+              <motion.div
               layoutId={`card-${card.title}-${id}`}
               key={card.title}
               onClick={() => setActive(card)}
-              className="p-4 flex flex-col  hover:bg-[#F2F2F2]  dark:hover:bg-neutral-400 rounded-xl w-[40vw]  border-2 cursor-pointer"
-            >
-              <div className="flex gap-4 flex-col  w-full">
-                <motion.div layoutId={`image-${card.title}-${id}`}>
+              className=" flex flex-col  hover:bg-[#F2F2F2] ml-4 mr-4 h-[40vh]  dark:hover:bg-neutral-400 overflow-hidden rounded-xl w-[30vw]  cursor-pointer">
+              <div className="flex flex-col  w-full h-[100%]">
+                <motion.div layoutId={`image-${card.title}-${id}`} className="w-[100%]  overflow-hidden h-[100%]">
                 <img
                   src={card.src} 
                   alt={card.title}
-                   width="500"
+                  width="500"
                   height="500"
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
-                />
+                  className="w-full h-[100%] bg-cover  sm:rounded-tr-lg sm:rounded-tl-lg object-cover  "
+                  />
                 </motion.div>
-                <div className="flex justify-center items-center flex-col">
-                  <motion.h3
-                    layoutId={`title-${card.title}-${id}`}
-                    className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
-                  >
-                    {card.title}
-                  </motion.h3>
-                  <motion.p
-                    layoutId={`description-${card.description}-${id}`}
-                    className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
-                  >
-                    {card.description}
-                  </motion.p>
-                </div>
               </div>
             </motion.div>
           ))}
         </ul>
+          </div>
+        
       </>
     );
   }
@@ -202,34 +181,25 @@ export function ExpandableCardDemo() {
    
   const cards = [
     {
-      description: "Lana Del Rey",
-      title: "Summertime Sadness",
-      src: Image1,
-      ctaLink: "https://ui.aceternity.com/templates",
+      description: "Table Full of Devs",
+      title: "SOLANA HACKER HOUSE",
+      src: gal1,
       content: () => {
         return (
           <p>
-            Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-            her melancholic and cinematic music style. Born Elizabeth Woolridge
-            Grant in New York City, she has captivated audiences worldwide with
-            her haunting voice and introspective lyrics. <br /> <br /> Her songs
-            often explore themes of tragic romance, glamour, and melancholia,
-            drawing inspiration from both contemporary and vintage pop culture.
-            With a career that has seen numerous critically acclaimed albums, Lana
-            Del Rey has established herself as a unique and influential figure in
-            the music industry, earning a dedicated fan base and numerous
-            accolades.
+            Got an oppurtunity to attend the Hacker House conducted by Solana in Benguluru at July 2024. Interated with many Tech nerds and  
           </p>
         );
       },
     },
+
    
     {
       description: "Metallica",
       title: "For Whom The Bell Tolls",
-      src: "https://assets.aceternity.com/demos/metallica.jpeg",
-      ctaText: "Visit",
-      ctaLink: "https://ui.aceternity.com/templates",
+      src: gal3,
+    //   ctaText: "Visit",
+    //   ctaLink: "https://ui.aceternity.com/templates",
       content: () => {
         return (
           <p>
@@ -247,9 +217,9 @@ export function ExpandableCardDemo() {
       },
     },
     {
-      description: "Lord Himesh",
-      title: "Aap Ka Suroor",
-      src: "https://assets.aceternity.com/demos/aap-ka-suroor.jpeg",
+      description: "",
+      title: "",
+      src: gal2,
       ctaText: "Visit",
       ctaLink: "https://ui.aceternity.com/templates",
       content: () => {
@@ -268,6 +238,50 @@ export function ExpandableCardDemo() {
         );
       },
     },
+    {
+      description: "",
+      title: "sds",
+      src: gal4,
+      content: () => {
+        return (
+          <p>
+            Himesh Reshammiya, a renowned Indian music composer, singer, and
+            actor, is celebrated for his distinctive voice and innovative
+            compositions. Born in Mumbai, India, he has become a prominent figure
+            in the Bollywood music industry. <br /> <br /> His songs often feature
+            a blend of contemporary and traditional Indian music, capturing the
+            essence of modern Bollywood soundtracks. With a career spanning over
+            two decades, Himesh Reshammiya has released numerous hit albums and
+            singles that have garnered him a massive fan following both in India
+            and abroad.
+          </p>
+        );
+      },
+    },
+    {
+      description: "",
+      title: "fsf",
+      src: gal1,
+      content: () => {
+        return (
+          <p>
+            Himesh Reshammiya, a renowned Indian music composer, singer, and
+            actor, is celebrated for his distinctive voice and innovative
+            compositions. Born in Mumbai, India, he has become a prominent figure
+            in the Bollywood music industry. <br /> <br /> His songs often feature
+            a blend of contemporary and traditional Indian music, capturing the
+            essence of modern Bollywood soundtracks. With a career spanning over
+            two decades, Himesh Reshammiya has released numerous hit albums and
+            singles that have garnered him a massive fan following both in India
+            and abroad.
+          </p>
+        );
+      },
+    },
+
+
+
+
   ];
 
 
