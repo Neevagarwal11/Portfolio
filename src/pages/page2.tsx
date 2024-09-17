@@ -119,10 +119,11 @@ useLayoutEffect(() =>{
    
     const MouseEnter =() =>{
       gsap.to(cursor,{
-        scale:2.9,
+        scale:3.9,
         opacity:0.3,
         duration:0.3,
-        zIndex:0 
+        zIndex:0 ,
+        border:"2px solid grey"
       })
     }
    
@@ -168,7 +169,7 @@ useLayoutEffect(() =>{
 
 
       <div ref={magnetoRef}  className='right  w-[50%] h-[100%] relative right-0  flex items-center justify-center' >
-        <div id='container' onClick={() => navigate('/explore')}  ref={btn} className='btn cursor-none z-10  container cursor-pointer flex items-center justify-center h-[40%] w-[30%] '>
+        <div id='container' onClick={() => navigate('/explore')}  ref={btn} className='btn  cursor-none z-10  container cursor-pointer flex items-center justify-center h-[40%] w-[30%] '>
           <div id='img' className='scale-[1.2] rotate-img absolute flex items-center justify-center'>
           <img src={img} alt="" ></img> 
           </div>

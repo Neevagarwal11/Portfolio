@@ -78,7 +78,7 @@ useLayoutEffect(() => {
 
 
     <div ref={scrollContainerRef} className='w-full cursor-none h-screen z-10 bg-[#1D1917] font-["grand"] text-6xl text-[#B09E94] absolute'>
-      <div id='cursor' className='cursor w-[13px] h-[13px] rounded-full border-2 border-[#D8D1CB] bg-[#D8D1CB] fixed  z-[100]'></div>
+      <div id='cursor' className='cursor w-[13px] h-[13px] rounded-full  bg-[#D8D1CB] pointer-events-none	 fixed  z-[100]'></div>
 
         <BackgroundBeamsWithCollisionDemo></BackgroundBeamsWithCollisionDemo>        
         <Page2 clientY={undefined} clientX={undefined}></Page2>
