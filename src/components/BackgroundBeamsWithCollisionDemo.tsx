@@ -10,28 +10,6 @@ import { useEffect } from 'react';
  export function BackgroundBeamsWithCollisionDemo() {
 
   
-//   const scrollRef = useRef<HTMLDivElement>(null);
-//       const locomotiveScrollInstance = useRef<any>(null);
-    
-//       useEffect(() => {
-//         if (scrollRef.current) {
-//           locomotiveScrollInstance.current = new LocomotiveScroll({
-//             el: scrollRef.current,
-//             smooth: true,
-//             multiplier: 1,
-//             class: 'is-reveal',
-//           });
-      
-//     console.log('Locomotive Scroll initialized');
-//   }
-
-//   return () => {
-//     if (locomotiveScrollInstance.current) {
-//       locomotiveScrollInstance.current.destroy();
-//       console.log('Locomotive Scroll destroyed');
-//     }
-//   };
-// }, []);
   
   return (
     <>
