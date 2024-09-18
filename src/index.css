@@ -25,6 +25,10 @@
   font-family: degular-light;
   src: url(../Fonts/DegularDisplay-Light.otf);
 }
+@font-face {
+  font-family: migra;
+  src: url(../Fonts//MigraItalic-ExtralightItalic.otf);
+}
 
 @font-face {
   font-family: logo;

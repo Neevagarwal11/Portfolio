@@ -7,8 +7,11 @@ import gal2 from '../assets/gallery2.jpg'
 import gal3 from '../assets/gal3.jpg'
 import gsap from 'gsap';  // Ensure GSAP is imported
 import gal5 from '../assets/gal5.jpg'
-
 import gal4 from '../assets/gal4.png'
+import { events } from "@react-three/fiber";
+
+
+
 export function ExpandableCardDemo() {
     const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
     const id = useId();
@@ -48,10 +51,11 @@ useLayoutEffect(() =>{
    
     const MouseEnter =() =>{
       gsap.to(cursor,{
-        scale:2.9,
-        opacity:0.3,
+        scale:3.9,
+        opacity:0.6,
         duration:0.3,
-        zIndex:1
+        zIndex:1,
+        border:"1px solid grey",        
       })
     }
    
@@ -80,7 +84,8 @@ useLayoutEffect(() =>{
   } , []);
   
 
-   
+
+
     return (
         
       <>
@@ -96,7 +101,7 @@ useLayoutEffect(() =>{
         </AnimatePresence>
         <AnimatePresence>
           {active && typeof active === "object" ? (
-            <div className="fixed inset-0   grid place-items-center z-[100]">
+            <div className="fixed inset-0  grid place-items-center z-[100]">
               <motion.button
                 key={`button-${active.title}-${id}`}
                 layout
@@ -170,19 +175,18 @@ useLayoutEffect(() =>{
         </AnimatePresence>
 
 {/* Main Grind of the gallery element */}
-        <div className="flex w-full justify-center">
+        <div  className="flex w-full justify-center">
 
-        <ul className="mt-[6vh] w-[95%] grid grid-cols-3 gap-x-0 items-center justify-center  gap-y-6">
+        <ul className="mt-[6vh] w-[95%] grid relative grid-cols-3 gap-x-0 items-center justify-center  gap-y-6">
           {cards.map((card, index) => (
               <motion.div
-              
               layoutId={`card-${card.title}-${id}`}
               key={card.title}
               onClick={() => setActive(card)}
-          
-              className=" flex flex-col  hover:bg-[#F2F2F2] ml-4 mr-4 h-[40vh]  dark:hover:bg-neutral-400 overflow-hidden rounded-xl w-[30vw]  cursor-pointer">
+              
+              className=" flex flex-col  hover:bg-[#F2F2F2] ml-4 mr-4 h-[40vh]  dark:hover:bg-neutral-400 rounded-xl w-[30vw]  cursor-pointer">
               <div ref={img}  id="image-hover" className="flex flex-col  w-full h-[100%]">
-                <motion.div layoutId={`image-${card.title}-${id}`} className="w-[100%]  overflow-hidden h-[100%]">
+                <motion.div layoutId={`image-${card.title}-${id}`} className="w-[100%]   h-[100%]">
                 <img
                   src={card.src} 
                   alt={card.title}
