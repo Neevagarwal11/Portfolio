@@ -71,6 +71,9 @@ html , body{
     }
 }
 
+#scroler-element{
+  animation: scroll 15s infinite linear;
+}
 
 /* Button Animation */
 
