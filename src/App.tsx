@@ -4,6 +4,7 @@
   import { BrowserRouter , Routes , Route } from 'react-router-dom';
   import Projects from './pages/projects'
   import Explore from './pages/explore'
+  import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
 
   function App() {
       
@@ -12,6 +13,7 @@
       
       <div className='w-full h-screen'>
         <BrowserRouter>
+        <ScrollToTop/>
         <Routes>
 
         <Route index element={<LandingPage/>}/>

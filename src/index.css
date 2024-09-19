@@ -113,3 +113,7 @@ html , body{
   transition: ease-in-out 300ms;
 }
 
+
+.overflow-scroll-test {
+  height: 2000px; /* Just for debugging scrolling behavior */
+}
