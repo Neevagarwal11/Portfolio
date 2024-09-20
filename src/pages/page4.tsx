@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import java from '../assets/java.png'
 import js from '../assets/js.png'
 import cpp from '../assets/cpp.png'
@@ -17,6 +17,11 @@ import trading from '../assets/trading.png'
 import canva from '../assets/canva.jpeg'
 import figma from '../assets/figma.png'
 import tally from '../assets/tally.webp'
+import {gsap} from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 function page4() {
 
     const tech = [
@@ -47,24 +52,71 @@ function page4() {
     ]
 
 
+
+    //Reveal Animation
+    useLayoutEffect(() => {
+      let ctx  = gsap.context(() =>{
+
+        const head = document.querySelector("#heading");
+        const ele = document.querySelectorAll(".content")
+        const t = gsap.timeline({
+          scrollTrigger:{
+            trigger:"#master",
+            start:"top bottom",
+            end:"bottom top ",
+            // markers:true
+          }
+        })
+
+        t.to(head , {
+          opacity:1,
+          // y:"-40px"
+        })
+
+
+
+        const time = gsap.timeline({
+          scrollTrigger:{
+            trigger:"#master",
+            start:"top bottom",
+            end:"bottom top ",
+            // markers:true,
+            scrub:true
+          }
+        })
+
+        time.to(ele , {
+          opacity:1,
+          // skewX:"0deg",
+          translateY:"-40px",
+          delay:0.4,
+          duration:5,
+          stagger:1
+
+        })
+        return () => ctx.revert();
+      })
+    })
+
+
   return (
 
-    <div className='w-full h-screen bg-[#1D1917] flex items-center justify-center'>
-      <div className='w-[80%] h-[90%] flex flex-col items-center justify-center border-green-300'>
+    <div className='w-full h-[130vh]  bg-[#1D1917] flex items-center justify-center'>
+      <div className='w-[80%] h-[90%] flex flex-col items-center  justify-center border-green-300'>
         <div className='w-[40%] h-[10%] font-["degular-light"] flex items-end justify-center font-[800] text-6xl ' > Tech Stack</div>
 
 
 {/* ALL the Tech Stack Content */}
-        <div className='w-[90%] h-[90%]'>
+        <div id='master' className='w-[90%] h-[90%]'>
 
           {/* Languages */}
-          <div className='Languages  flex items-center justify-start flex-col py-8 w-full h-[33%]'>
-            <div className='head text-4xl'>Languages</div>
+          <div  className='Languages  flex items-center justify-between flex-col py-4 w-full h-[30%] '>
+            <div id='heading' className='head opacity-0 text-4xl'>Languages</div>
 
-            <div className='w-full h-[100%] justify-center flex py-8 flex-row gap-6  p-5'>
+            <div id='' className='content opacity-[0]	 w-full h-[100%] flex justify-between py-10 flex-row gap-6  px-2'>
 
               {tech.map((item , index) =>(
-                <div className=' h-[70%] px-4 gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
+                <div  className=' h-[50%] px-4 gap-2 justify-around overflow-hidden translate-y-10 items-center relative flex flex-row rounded-full border-[1px]'>
                   <div className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
 
                   <div className='name  w-[70%] h-full text-2xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
@@ -76,15 +128,15 @@ function page4() {
 
 
               {/*WEB TECH  */}
-          <div className='Languages  flex items-center px-12 justify-start flex-col py-8 w-full h-[33%]'>
+          <div className='Languages  flex items-center px-12 justify-between flex-col py-8 w-full h-[33%]'>
 
 
             <div className='head text-4xl'>Web Technologies</div>
 
-            <div className='w-full h-[90%] flex justify-center flex-row py-8 gap-6  p-2'>
+            <div id='content' className='content opacity-0 w-full h-[90%] flex justify-between flex-row py-8 gap-6  p-2'>
 
               {web.map((item , index) =>(
-                <div className=' h-[100%] px-4 gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
+                <div className=' h-[50%] translate-y-[40px] px-4 gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
                   <div className='img  h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
 
                   <div className='name  h-full text-2xl w-[80%] font-["degular-light"] flex items-center justify-center '>{item.name}</div>
@@ -101,10 +153,10 @@ function page4() {
 
             <div className='head text-4xl'>Tools / Platforms</div>
 
-            <div className='w-full h-[90%] flex justify-center flex-row py-8 gap-6  p-2'>
+            <div className='content w-full   opacity-0 h-[90%] flex justify-center flex-row py-8 gap-6  p-2'>
 
               {tools.map((item , index) =>(
-                <div className=' h-[100%] px-4 gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
+                <div className=' h-[60%] px-4 translate-y-[40px] gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
                   <div className='img  h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
 
                   <div className='name  w-[70%] h-full text-2xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>

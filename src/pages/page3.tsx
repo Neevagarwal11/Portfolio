@@ -209,7 +209,7 @@ useLayoutEffect(() =>{
     })
 
   return (
-    <div  ref ={main} id='main' className='w-full h-[370vh] bg-[#1D1917]  flex flex-col'>
+    <div  ref ={main} id='main' className='w-full h-[350vh] bg-[#1D1917]  flex flex-col'>
         {/* Best-Project Array */}
         {[
             {name:"Lazarev" , url:"https://neev-animated.netlify.app/" , img:lazarev, para:"Website for an AI & ML Agency to advertise their work. Built with HTML , CSS and many modern concepts of JS making it look modern." },
@@ -240,7 +240,7 @@ useLayoutEffect(() =>{
 
 
 {/* View All Projects Button */}
-        <div className='w-full h-[50vh]  flex items-center justify-center'>
+        <div className='w-full h-[30vh]  flex items-center justify-center'>
 
 
 
