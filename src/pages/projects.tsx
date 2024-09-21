@@ -8,9 +8,10 @@ import { Preload, PerformanceMonitor } from '@react-three/drei';
 
 function projects() {
   return (
-    <div className='w-full h-screen '>
-      
-    <Canvas flat className='bg-[#1D1917]'  camera={{ fov: 30 }}>
+    <div className='w-full bg-[#1D1917] h-screen '>
+      <div className='w-full overflow-visible	 h-[80vh]'>
+
+    <Canvas flat className=' overflow-visible'  camera={{ fov: 23 }}>
       <ambientLight/>
         <Page3roller></Page3roller>
         <PerformanceMonitor>
@@ -25,10 +26,14 @@ function projects() {
         luminanceSmoothing={0.24} // smoothness of the luminance threshold. Range is [0, 1]
         />
      <ToneMapping adaptive={false}></ToneMapping>
-</EffectComposer>
 
-  
+
+</EffectComposer>
     </Canvas>
+        </div>
+
+
+    <div className='w-full absolute h-[20%] border-2'></div>
       </div>
   )
 }

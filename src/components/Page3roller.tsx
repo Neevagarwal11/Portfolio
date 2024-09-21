@@ -11,7 +11,7 @@ function Page3roller() {
 
   useFrame((state , delta) =>{
     if(cyl.current){
-      cyl.current.rotation.y +=delta;
+      cyl.current.rotation.y +=delta *0.7;
     }
   })
 
@@ -19,8 +19,8 @@ function Page3roller() {
   return (
     <group ref={cyl} rotation={[0,1.5,0.5]}>
     <mesh >
-        <cylinderGeometry args={[1,1,1,60,60,true]}/>   
-        <meshStandardMaterial map={tex} transparent side={THREE.DoubleSide}/>
+        <cylinderGeometry args={[1,1,1,100,80,true]}/>   
+        <meshStandardMaterial map={tex} transparent  side={THREE.DoubleSide}/>
     </mesh>
     </group>
   )
