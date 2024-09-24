@@ -19,9 +19,9 @@ useLayoutEffect(() =>{
     const MouseEnter =() =>{
       gsap.to(cursor,{
         scale:3.9,
-        opacity:0.3,
+        opacity:0.6,
         duration:0.3,
-        border:"2px solid grey"
+        border:"1px solid grey"
       })
     }
    
@@ -48,8 +48,8 @@ useLayoutEffect(() =>{
 })
 const navigate = useNavigate();
   return (
-    <div  className='w-full flex flex-row px-10 h-[10vh] fixed top-0 text-2xl text-[#B09E94] cursor-poiinter z-[10]'>
-        <div ref={btn} onClick={() => navigate('/home')} className='logo w-[10%]  h-[100%] flex flex-row items-center justify-around'> <img src={Logo} alt="" className='w-[20%] h-[35%] '/>
+    <div  className='w-full flex flex-row cursor-none px-10 h-[10vh] fixed top-0 text-2xl text-[#B09E94] cursor-poiinter z-[10]'>
+        <div ref={btn} onClick={() => navigate('/home')} className='logo w-[10%] cursor-none  h-[100%] flex flex-row items-center justify-around'> <img src={Logo} alt="" className='w-[20%] h-[35%] '/>
         <h2 className='font-["logo"] text-[1vw] tracking-tighter leading-4'>NEEV <br /> AGARWAL</h2>
         </div>
     </div>
