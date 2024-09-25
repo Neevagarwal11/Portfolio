@@ -6,7 +6,7 @@ import Lenis from '@studio-freight/lenis';
 import { Power3, Elastic } from 'gsap';
 import resume from '../assets/NEEV AGARWAL RESUME.pdf'
 import Navbar from '../components/navbar'
-
+import Gallery from '../pages/page5'
 interface MagnetoProps {
   className?: string; // className is optional
   children: React.ReactNode; // children can be any React node
@@ -328,7 +328,7 @@ useLayoutEffect(() =>{
 
   {/* Experience Section */}
 
-
+    <Gallery></Gallery>
     </div>
     </>
   )
