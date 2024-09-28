@@ -28,7 +28,7 @@ function projects() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
+    lenis.scrollTo(0);
     requestAnimationFrame(raf); 
     lenis.on('scroll', ScrollTrigger.update);
 
