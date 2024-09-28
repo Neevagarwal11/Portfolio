@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rollup --bundleConfigAsCjs -c",
+  "build": "react-scripts build",
     "lint": "eslint .",
     "preview": "vite preview",
     "prebuild": "shx rm -rf ./dist/*",

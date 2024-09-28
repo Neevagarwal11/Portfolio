@@ -159,7 +159,7 @@ useLayoutEffect(() =>{
       <Page2Spindel></Page2Spindel>
 
 
-    <div id='p2container' className='p2-container sm:border-2 w-full h-[70%] relative bottom-0 flex  flex-row'>
+    <div id='p2container' className='p2-container w-full h-[70%] relative bottom-0 flex  flex-row'>
 
       <div id='paracontainer' className='left flex items-center justify-center font-["aftesto"] w-[50%] h-[100%] relative left-0'>
         <p id='p2para' className='w-[65%] font-[900] text-[#E3D9C9] text-2xl absolute '>I'm an Indian undergraduate student and a passionate web developer, specializing in creating dynamic and responsive websites. I'm always eager to learn new technologies and improve my skills in both front-end and back-end development. </p>
