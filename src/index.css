@@ -117,3 +117,159 @@ html , body{
 .overflow-scroll-test {
   height: 2000px; /* Just for debugging scrolling behavior */
 }
+
+
+
+/* Responsive Design */
+
+@media only screen and (max-width: 640px) {
+ #main-container{
+  overflow-x: hidden;
+  overflow-y: auto;
+ }
+  
+  #navbarcontainer{
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    padding-left: 5%;
+  }
+  #navinner{
+    width: 40%;
+    gap: 0;
+    padding: 0px;
+    justify-items: center;
+    align-items: center;
+  }
+  #navinner>h2{
+    width: 100%;
+    height: 100%;
+    font-size: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  #p1{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+  #p1container{
+    width: 100vw;
+    height: 70vh;
+    position: relative;
+    top:10vw;
+    margin-top: 8vw;
+    line-height: 2vw;
+  }
+  #p1container>h1{
+    font-size: 15vw;
+  }
+  #p1container>h3{
+    font-size: 6vw;
+  }
+  #p1container>h2{
+    font-size:6vw;
+    
+  }
+  #beam{
+    height: 100vh;
+  }
+  #p1container>h2>span{
+    font-size:12vw;
+    
+  }
+
+
+  /* Page2 */
+
+  #p2main{
+    height: 100vh;
+    /* border: 2px solid red; */
+  }
+  #p2container{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  #p2para{
+    width: 90%;
+    /* border: 2px solid green; */
+    font-size: 6.5vw;
+  }
+  #paracontainer{
+    width: 100%;
+    /* border: 2px solid red; */
+  }
+
+#btncontainer{
+  /* border: 2px solid red; */
+  scale:0.9;
+  margin-top: 2vw;
+}
+#btn-text{
+display: flex;
+align-items: center;
+justify-self: center;
+padding: 0;
+
+}
+
+
+#p2-5{
+  height: 30vh;
+  /* border: 2px solid red; */
+  
+}
+
+/* Page3 */
+#p3elem{
+  /* border: 2px solid red; */
+  flex-direction: column;
+  gap: 4vw;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+#imgbox{
+  width: 100%;
+  position: absolute;
+  bottom: 0.5%;
+  left: 0%;
+  height: 30%;
+  
+}
+#p3para{
+  font-size: 9.5vw;
+  padding-top:4%;
+  padding-left:5%;
+  width: 100%;
+  /* border: 2px solid red; */
+  line-height: 1;
+  height: 40%;
+  position: absolute;
+  top: 20%;
+}
+#head{
+  opacity: 1;
+  font-size: 12vw;
+  position: absolute;
+  left: 2%;
+  top: 0%;
+  right: 2%;
+}
+
+
+#p3btncontainer{
+  width: 100%;
+}
+
+
+
+
+}

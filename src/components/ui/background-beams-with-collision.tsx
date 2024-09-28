@@ -68,12 +68,12 @@ export const BackgroundBeamsWithCollision = ({
 
   return (
     <div
+    id="beam"
       ref={parentRef}
       className={cn(
-        "h-[-20vh] md:h-screen relative flex items-center w-full justify-center overflow-hidden",
+        "h-[-20vh]  md:h-screen  relative flex items-center w-full justify-center overflow-hidden",
         // h-screen if you want bigger
         
-        className
       )}
     >
       {beams.map((beam) => (

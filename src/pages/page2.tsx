@@ -155,20 +155,20 @@ useLayoutEffect(() =>{
   const navigate = useNavigate();
 
   return (
-    <div className='h-screen z-10 w-full bg-[#1D1917]  text-white '>
+    <div id='p2main' className='h-screen z-10 w-full bg-[#1D1917]  text-white '>
       <Page2Spindel></Page2Spindel>
 
 
-    <div className='p2-container w-full h-[70%] relative bottom-0 flex  flex-row'>
+    <div id='p2container' className='p2-container sm:border-2 w-full h-[70%] relative bottom-0 flex  flex-row'>
 
-      <div className='left flex items-center justify-center font-["aftesto"] w-[50%] h-[100%] relative left-0'>
-        <p className='w-[65%] font-[900] text-[#E3D9C9] text-2xl absolute '>I'm an Indian undergraduate student and a passionate web developer, specializing in creating dynamic and responsive websites. I'm always eager to learn new technologies and improve my skills in both front-end and back-end development. </p>
+      <div id='paracontainer' className='left flex items-center justify-center font-["aftesto"] w-[50%] h-[100%] relative left-0'>
+        <p id='p2para' className='w-[65%] font-[900] text-[#E3D9C9] text-2xl absolute '>I'm an Indian undergraduate student and a passionate web developer, specializing in creating dynamic and responsive websites. I'm always eager to learn new technologies and improve my skills in both front-end and back-end development. </p>
       </div>
 
 {/* Button */}
 
 
-      <div ref={magnetoRef}  className='right  w-[50%] h-[100%] relative right-0  flex items-center justify-center' >
+      <div ref={magnetoRef} id='btncontainer'  className='right  w-[50%] h-[100%] relative right-0  flex items-center justify-center' >
         <div id='container' onClick={() => navigate('/explore')}  ref={btn} className='btn  cursor-none z-10  container cursor-pointer flex items-center justify-center h-[40%] w-[30%] '>
           <div id='img' className='scale-[1.2] rotate-img absolute flex items-center justify-center'>
           <img src={img} alt="" ></img> 

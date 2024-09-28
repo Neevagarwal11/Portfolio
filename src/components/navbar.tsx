@@ -48,8 +48,8 @@ useLayoutEffect(() =>{
 })
 const navigate = useNavigate();
   return (
-    <div  className='w-full flex flex-row cursor-none px-10 h-[10vh] fixed top-0 text-2xl text-[#B09E94] cursor-poiinter z-[10]'>
-        <div ref={btn} onClick={() => navigate('/home')} className='logo w-[10%] cursor-none  h-[100%] flex flex-row items-center justify-around'> <img src={Logo} alt="" className='w-[20%] h-[35%] '/>
+    <div id='navbarcontainer'  className='w-full flex flex-row cursor-none px-10 h-[10vh] fixed top-0 text-2xl text-[#B09E94] z-[10]'>
+        <div id='navinner' ref={btn} onClick={() => navigate('/home')} className='logo w-[10%] cursor-none  h-[100%] flex flex-row items-center justify-around'> <img src={Logo} alt="" className='w-[20%] h-[35%] '/>
         <h2 className='font-["logo"] text-[1vw] tracking-tighter leading-4'>NEEV <br /> AGARWAL</h2>
         </div>
     </div>

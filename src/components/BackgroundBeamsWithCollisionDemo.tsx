@@ -13,14 +13,14 @@ import { useEffect } from 'react';
   
   return (
     <>
-    <div className="w-full h-screen"  >
+    <div id="p1" className="w-full h-screen sm:w-full sm:h-screen"  >
 
-    <BackgroundBeamsWithCollision >
+    <BackgroundBeamsWithCollision>
       <Navbar>
       </Navbar>
 
-      <div  className=" absolute z-10  font-['grand'] flex flex-col justify-around  text-[#B09E94] w-[80vw] z-20 font-bold h-[80vh] items-center ">
-        <h3 className="text-[3vh] leading-[0.8em]" data-scroll data-scroll-speed="2">Full Stack Developer</h3>
+      <div id="p1container" className=" absolute z-10  font-['grand'] flex flex-col justify-around  text-[#B09E94] w-[80vw] z-20 font-bold h-[80vh] items-center ">
+        <h3 className="text-[3vh] leading-[0.8em]" >Full Stack Developer</h3>
         <h1 className="text-[18vh] ">CREATING <span className="text-18xl">&</span></h1>
         <h1 className="text-[18vh] leading-[0.9em]">IMPROVING</h1>
         <h2 className="text-4xl leading-[1.1em]"> seamless &nbsp; <span className="text-6xl">experiences</span></h2>
