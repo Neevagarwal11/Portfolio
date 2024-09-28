@@ -272,10 +272,14 @@ padding: 0;
 
 
 /* Page4  */
-
+#p4main{
+  height: 100vh;
+}
 #master{
   border: 2px solid red;
+  width: 100%;
 }
+
 
 
 

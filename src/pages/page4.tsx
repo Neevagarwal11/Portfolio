@@ -101,8 +101,8 @@ function page4() {
 
   return (
 
-    <div className='w-full h-[130vh]  bg-[#1D1917] flex items-center justify-center'>
-      <div className='w-[80%] h-[90%] flex flex-col items-center  justify-center border-green-300'>
+    <div id='p4main' className='w-full h-[130vh]  bg-[#1D1917] flex items-center justify-center'>
+      <div className='w-[80%] h-[90%] border-2 flex flex-col items-center  justify-center border-green-300'>
         <div className='w-[40%] h-[10%] font-["degular-light"] flex items-end justify-center font-[800] text-6xl ' > Tech Stack</div>
 
 
