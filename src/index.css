@@ -125,7 +125,7 @@ html , body{
 @media only screen and (max-width: 640px) {
  #main-container{
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
  }
   
   #navbarcontainer{
@@ -269,6 +269,13 @@ padding: 0;
   width: 100%;
 }
 
+
+
+/* Page4  */
+
+#master{
+  border: 2px solid red;
+}
 
 
 
