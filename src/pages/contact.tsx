@@ -1,8 +1,9 @@
 import React, { useLayoutEffect } from 'react'
 import Scroller from '../components/infinite-scroller'
-import {gsap , Power3 , Elastic} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Social from '../components/social'
 gsap.registerPlugin(ScrollTrigger);
+import {gsap , Power3 , Elastic} from 'gsap';
 
 
 function contact() {
@@ -54,17 +55,20 @@ useLayoutEffect(() => {
 
 
   return (
-    <div className='w-full  h-screen bg-[#1D1917]'>
+<>
+    <div className='w-full  h-[120vh] bg-[#1D1917]'>
       {/* Quote */}
       <div id='masterdiv' className='w-[100%] h-[80%] flex items-center justify-center'>
         <div className='w-[90%] h-full '>
 
-{/* TEXT */}
           <div id='text' className='text-6xl leading-none leading-[10vw] relative'>let's  <span className='text-[12vw] absolute'>Create</span> <br /> something <span  className='text-[10vw] absolute'>Captivating</span> <br /> and <b className='font-[900]'>truly</b> <span className='text-[10vw] absolute'>Sensational</span></div>
 
         </div>
       </div>
+    <Social></Social>
     </div>
+
+    </>
   )
 }
 
