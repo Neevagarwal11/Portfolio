@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf ./dist/*",
+    "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint .",
     "preview": "vite preview",
     "prebuild": "rm -rf ./dist/*",
-    "postbuild": "shx rm -rf ./dist/types/ && shx cp -r ./dist/* ../../dist",
+    "postbuild": "rm -rf ./dist/types/ && cp -r ./dist/* ../../dist",
     "watch": "rollup --bundleConfigAsCjs -c -w",
     "playground": "npm run dev --prefix ./playground"
   },

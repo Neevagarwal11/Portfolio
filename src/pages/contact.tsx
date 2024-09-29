@@ -61,7 +61,7 @@ useLayoutEffect(() => {
       <div id='masterdiv' className='w-[100%] h-[80%] flex items-center justify-center'>
         <div className='w-[90%] h-full '>
 
-          <div id='text' className='text-6xl leading-none leading-[10vw] relative'>let's  <span className='text-[12vw] absolute'>Create</span> <br /> something <span  className='text-[10vw] absolute'>Captivating</span> <br /> and <b className='font-[900]'>truly</b> <span className='text-[10vw] absolute'>Sensational</span></div>
+          <div id='text' className='text-6xl leading-none leading-[20vh] absolute w-[100%] h-[60%]'>let's  <span className='text-[12vw] absolute'>Create</span> <br /> something <span  className='text-[10vw] absolute'>Captivating</span> <br /> and <b className='font-[900]'>truly</b> <span className='text-[10vw] absolute'>Sensational</span></div>
 
         </div>
       </div>
