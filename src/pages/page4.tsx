@@ -102,7 +102,7 @@ function page4() {
   return (
 
     <div id='p4main' className='w-full h-[130vh]  bg-[#1D1917] flex items-center justify-center'>
-      <div className='w-[80%] h-[90%] border-2 flex flex-col items-center  justify-center border-green-300'>
+      <div id='p4inner' className='w-[80%] h-[90%]  flex flex-col items-center  justify-center border-green-300'>
         <div className='w-[40%] h-[10%] font-["degular-light"] flex items-end justify-center font-[800] text-6xl ' > Tech Stack</div>
 
 
@@ -113,11 +113,11 @@ function page4() {
           <div  className='Languages  flex items-center justify-between flex-col py-4 w-full h-[30%] '>
             <div id='heading' className='head opacity-0 text-4xl'>Languages</div>
 
-            <div id='' className='content opacity-[0]	 w-full h-[100%] flex justify-between py-10 flex-row gap-6  px-2'>
+            <div id='elecontainer' className='content opacity-[0]	 w-full h-[100%] flex justify-between py-8 flex-row gap-6  px-2'>
 
               {tech.map((item , index) =>(
-                <div  className=' h-[50%] px-4 gap-2 justify-around overflow-hidden translate-y-10 items-center relative flex flex-row rounded-full border-[1px]'>
-                  <div className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
+                <div id='p4ele'  className=' h-[50%] px-4 gap-2 justify-around overflow-hidden translate-y-10 items-center relative flex flex-row rounded-full border-[1px]'>
+                  <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
 
                   <div className='name  w-[70%] h-full text-2xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
                 </div>

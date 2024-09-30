@@ -13,20 +13,44 @@ function page2(event: {
 }) {
 
   // Btn Img
+
   useLayoutEffect(() => {
       let ctx = gsap.context(() => {
-        const t = gsap.timeline({
-          scrollTrigger: {
-            trigger:magnetoRef.current, 
-            scrub: 1,
-          },
-        });
-  
-        t.to("#img>img", { 
-          rotate: '350deg',
-          duration:5,
-          scrub:2,
-        });
+
+        const mm = window.matchMedia("(max-width:640px)");
+
+        if(mm.matches){
+
+          const t = gsap.timeline({
+            scrollTrigger: {
+              trigger:magnetoRef.current, 
+              scrub: 1,
+            },
+          });
+          
+          t.to("#img>img", { 
+            rotate: '350deg',
+            duration:5,
+            scrub:2,
+          });
+        }else{
+          const t = gsap.timeline({
+            scrollTrigger: {
+              trigger:magnetoRef.current, 
+              scrub: 1,
+            },
+          });
+          
+          t.to("#img>img", { 
+            rotate: '100deg',
+            duration:5,
+            scrub:2,
+          });
+        }
+
+
+
+
       }, magnetoRef); // Ensure gsap context is using the correct reference
   
       return () => ctx.revert();
