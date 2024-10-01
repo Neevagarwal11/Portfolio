@@ -25,9 +25,9 @@ useLayoutEffect(() => {
     })
     
     t.from("#text span",{
-      opacity:0.1,
-      transform:"scaleX(1) scaleY(0.4) translateY(150%)",
-      duration:140,
+      opacity:0,
+      transform:"scaleX(1) scaleY(0.5) translateY(50%)",
+      duration:240,
       delay:0.8,
       stagger:0.1,
       ease:Power3.easeOut,
@@ -61,7 +61,7 @@ useLayoutEffect(() => {
       <div id='masterdiv' className='w-[100%] h-[80%] flex items-center justify-center'>
         <div className='w-[90%] h-full '>
 
-          <div id='text' className='text-6xl leading-none leading-[20vh] absolute w-[100%] h-[60%]'>let's  <span className='text-[12vw] absolute'>Create</span> <br /> something <span  className='text-[10vw] absolute'>Captivating</span> <br /> and <b className='font-[900]'>truly</b> <span className='text-[10vw] absolute'>Sensational</span></div>
+          <div id='text' className='text-6xl leading-4 leading-[20vh] absolute w-[100%] h-[60%]'>let's  <span className='text-[12vw] absolute'>Create</span> <br /> something <span  className='text-[10vw] absolute'>Captivating</span> <br /> and <b className='font-[900]'>truly</b> <span className='text-[10vw] absolute'>Sensational</span></div>
 
         </div>
       </div>

@@ -276,42 +276,62 @@ padding: 0;
   height: 100vh;
 }
 #master{
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 100%;
 }
 #heading{
+  /* border: 2px solid  green; */
   opacity: 1;
+  margin-top: 0;
+}
+#language{
+  padding: 0;
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: space-between;
 }
 #p4ele{
+  display: flex;
   opacity: 1;
-  padding: 1vh;
   margin-top: 0;
   transform: translate(0);
-  width: 40%;
-
-  height: 8vh;
+  display: flex;
+  height: 9vh;
+  padding: 1vw;
+  padding-left: 2vw;
+  justify-content: space-around;
+  scale: 0.7;
+  /* white-space:nowrap; */
+  /* width: fit-content; */
 }
 #elecontainer{
   opacity: 1;
-  border: 2px solid blue;
-  /* margin: 0; */
-  margin-top: 0;
-  gap: 0;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  padding-top: 1px;
-  gap: 2vw;
+  /* border: 2px solid blue; */
+  display: grid;
+  grid-template-columns: repeat(3,30vw);
+  grid-template-rows: repeat(2,15vw);
+  gap: 0vw;
+  grid-auto-rows: auto;
+  grid-auto-columns:min-content;
+  padding-top: 2vw;
   height: 100%;
 }
 #p4eleimg{
   display: none;
+  width: 100%;
+  /* scale: 1.1; */
+
 }
 #p4inner{
   width: 100%;
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
 }
+
+
+
+/* Page 5 */
+
+
 
 
 }
