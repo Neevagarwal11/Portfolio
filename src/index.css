@@ -58,7 +58,6 @@ html , body{
   justify-content: center;
 }
 
-
 #scroller{
   animation: scroll 15s infinite linear;
 }
@@ -316,6 +315,9 @@ padding: 0;
   padding-top: 2vw;
   height: 100%;
 }
+#tech{
+  width: 100%;
+}
 #p4eleimg{
   display: none;
   width: 100%;
@@ -331,7 +333,40 @@ padding: 0;
 
 /* Page 5 */
 
+#masterdiv{
+  display: none;
+}
 
 
+/* Social */
+
+
+#socialmain{
+  flex-direction: column-reverse;
+}
+#socialelem{
+  height: 40%;
+  width: 40%;
+  margin: 0;
+
+}
+#socialelecontainer{
+  /* border: 2px solid blue; */
+  width: 70%;
+  gap: 0;
+  height: 80%;
+  justify-content: start;
+}
+#socialtext{
+  font-size: 5vh;
+}
+
+#contactmain{
+  height: 30vh;
+}
+
+#cursor{
+  display: none;
+}
 
 }

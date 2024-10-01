@@ -103,7 +103,7 @@ function page4() {
 
     <div id='p4main' className='w-full h-[130vh]  bg-[#1D1917] flex items-center justify-center'>
       <div id='p4inner' className='w-[80%] h-[90%]  flex flex-col items-center  justify-center border-green-300'>
-        <div className='w-[40%] h-[10%] font-["degular-light"] flex items-end justify-center font-[800] text-6xl ' > Tech Stack</div>
+        <div id='tech' className='w-[40%] h-[10%] font-["degular-light"] flex items-end justify-center font-[800] text-6xl ' > Tech Stack</div>
 
 
 {/* ALL the Tech Stack Content */}

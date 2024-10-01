@@ -121,10 +121,11 @@ const btn = useRef<(HTMLDivElement | null)[]>([]);
 
 
   return (
-    <div className='w-full h-[20vh] flex flex-row gap-2 px-[2vw]'>
+    <div id='socialmain' className='w-full h-[20vh] flex flex-row gap-2 px-[2vw]'>
 
+<div id='socialelecontainer' className='flex flex-row w-[50%] justify-center'>
       {social.map((item, index) => (
-        <div ref={(el) => (magnetoRefs.current[index] = el)} key={index} className='container w-[5%] flex items-center justify-center h-[50%] '>
+        <div id='socialelem' ref={(el) => (magnetoRefs.current[index] = el)} key={index} className='container  w-[12%] flex items-center justify-center h-[60%] '>
           <div ref={(el) => (btn.current[index] = el)}  className='element cursor-none w-[70%] h-[70%] border-2  flex items-center justify-center rounded-[10px]'>
             <a href={item.url} className='w-[100%] h-full flex items-center cursor-none  justify-center p-0 m-0'>
               <img src={item.img} alt="" className='bg-contain w-[90%] h-[90%] aspect-square' />
@@ -133,8 +134,9 @@ const btn = useRef<(HTMLDivElement | null)[]>([]);
           </div>
         </div>
       ))}
+      </ div>
 
-      <div className='absolute right-[10%] font-["migra"] text-[5.3vw] font-[500]'>Let's Connect !</div>
+      <div id='socialtext' className='absolute right-[10%] font-["migra"] text-[5.3vw] font-[500]'>Let's Connect !</div>
     </div>
   );
 }
