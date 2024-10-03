@@ -8,11 +8,11 @@ import { gsap, Power3, Elastic } from 'gsap';
 
 function Social() {
   const social = [
-    { name: "Instagram", img: insta, url: "#" },
-    { name: "Linkedin", img: Link, url: "#" },
-    { name: "Gmail", img: gmail, url: "#" },
-    { name: "Github", img: git, url: "#" },
-    { name: "Twitter", img: x, url: "#" },
+    { name: "Instagram", img: insta, url: "https://www.instagram.com/neev_agarwal_?igsh=MW80b2pvbndzeXQxMg==" },
+    { name: "Linkedin", img: Link, url: "https://www.linkedin.com/in/neev-agarwal-97a323287" },
+    { name: "Gmail", img: gmail, url: "https://mail.google.com/mail/?view=cm&fs=1&to=agarwalneev2005@gmail.com" },
+    { name: "Github", img: git, url: "https://github.com/Neevagarwal11" },
+    { name: "Twitter", img: x, url: "https://x.com/NeevAgarwal11?t=dtuEO8xmVRK5Bs3Jo4onEg&s=08 " },
   ];
 
   //Magneto Effect
@@ -127,7 +127,7 @@ const btn = useRef<(HTMLDivElement | null)[]>([]);
       {social.map((item, index) => (
         <div id='socialelem' ref={(el) => (magnetoRefs.current[index] = el)} key={index} className='container  w-[12%] flex items-center justify-center h-[60%] '>
           <div ref={(el) => (btn.current[index] = el)}  className='element cursor-none w-[70%] h-[70%] border-2  flex items-center justify-center rounded-[10px]'>
-            <a href={item.url} className='w-[100%] h-full flex items-center cursor-none  justify-center p-0 m-0'>
+            <a href={item.url} target='_blank' className='w-[100%] h-full flex items-center cursor-none  justify-center p-0 m-0'>
               <img src={item.img} alt="" className='bg-contain w-[90%] h-[90%] aspect-square' />
               <div ref={(el) => (btntextRefs.current[index] = el)}></div>
             </a>
