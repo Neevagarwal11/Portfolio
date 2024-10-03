@@ -196,20 +196,20 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
     <div ref={scrollContainerRef} className='w-full absolute cursor-none  bg-[#1D1917] text-[#B09E94] h-[110vh] '>
     <div id='cursor' className='cursor w-[13px] h-[13px] rounded-full  bg-[#D8D1CB] pointer-events-none	 fixed  z-[100]'></div>
 
-      <div className='w-full  h-[100%] flex flex-row '>
-          <div className='top leading-none px-8 flex items-start justify-end flex-col w-[50%] h-[60%] '>
+      <div id='proleft' className='w-full  h-[100%] flex flex-row '>
+          <div id='left' className='top leading-none px-8 flex items-start justify-end flex-col w-[50%] h-[60%] '>
             <div className='heading text-[10vw] font-["grand"]'><h1>Projects</h1></div>
             <div className='text-[5vw] font-["degular-light"] px-6'>selection</div>
           </div>
 
-          <div className='para flex items-end w-[50%]  h-screen'>
+          <div id='right' className='para flex items-end w-[50%]  h-screen'>
             <p className='text-[2vw] w-[80%] p-10 font-["migra"] font-[700]'>Over the last 2 years , my expertise has centered around JavaScript in making creative and  modern looking websites with frameworks like ReactJs , GSAP , Lenis , three.js and many more. Explore my projects below to witness firsthand the impact of my skills.</p>
           </div>
       </div>
 
 
-      <div className='w-full  bg-[#1D1917] flex flex-row items-center overflow-visible h-[100vh]'>
-      <div className='w-[50%] h-[80%] py-10  '>
+      <div id='canvasmain' className='w-full  bg-[#1D1917] flex flex-row items-center overflow-visible h-[100vh]'>
+      <div id='canvas' className='w-[50%] h-[80%] py-10  '>
 
     <Canvas flat className=' overflow-visible'  camera={{ fov: 23 }}>
       <ambientLight/>
@@ -233,9 +233,9 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
       </div>
 
 
-      <div className='w-[50%] h-screen flex flex-col justify-center items-center '>
+      <div id='protextmain' className='w-[50%] h-screen flex flex-col justify-center items-center '>
         <div>
-          <p className='text-[1.5vw] w-[78%] p-8 font-["aftesto"] leading-[1.2]'>These samples showcase my work in Frontend Development, including websites created for club recruitment, personal portfolios, and the exploration of various concepts in creative development. More projects, particularly in the area of functional development, are on the way.</p>
+          <p id='propara' className='text-[1.5vw] w-[78%] p-8 font-["aftesto"] leading-[1.2]'>These samples showcase my work in Frontend Development, including websites created for club recruitment, personal portfolios, and the exploration of various concepts in creative development. More projects, particularly in the area of functional development, are on the way.</p>
           <h2 className='text-[1.9vw] p-8 font-["bodoni"]'>For more projects, feel free to explore my GitHub.</h2>
         </div>
 
