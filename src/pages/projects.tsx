@@ -234,13 +234,13 @@ magneto?.addEventListener('mouseleave' ,resetBtn)
 
 
       <div id='protextmain' className='w-[50%] h-screen flex flex-col justify-center items-center '>
-        <div>
+        <div className='projleft'>
           <p id='propara' className='text-[1.5vw] w-[78%] p-8 font-["aftesto"] leading-[1.2]'>These samples showcase my work in Frontend Development, including websites created for club recruitment, personal portfolios, and the exploration of various concepts in creative development. More projects, particularly in the area of functional development, are on the way.</p>
-          <h2 className='text-[1.9vw] p-8 font-["bodoni"]'>For more projects, feel free to explore my GitHub.</h2>
+          <h2 id='proh2' className='text-[1.9vw] p-8 font-["bodoni"]'>For more projects, feel free to explore my GitHub.</h2>
         </div>
 
-        <div ref={magnetoRef} className='w-full h-[15%] flex items-center   justify-center'>
-          <div ref={btn} className='git-btn overflow-hidden w-[23%] h-[80%] border-[1px] rounded-xl '>
+        <div id='projright' ref={magnetoRef} className='w-full h-[15%] flex items-center   justify-center'>
+          <div ref={btn} id='gitbtn' className='git-btn overflow-hidden w-[23%] h-[80%] border-[1px] rounded-xl '>
           <a href="https://github.com/Neevagarwal11" target='_blank' className='cursor-none'>
             <img src={github} alt="GitHub Logo" />
             <div ref={btntextRef}></div>
