@@ -177,14 +177,14 @@ useLayoutEffect(() =>{
 {/* Main Grind of the gallery element */}
         <div  className="flex w-full justify-center">
 
-        <ul className="mt-[6vh] w-[95%] grid relative grid-cols-3 gap-x-0 items-center justify-center  gap-y-6">
+        <ul id="galcontainer" className="mt-[6vh] w-[95%] grid relative grid-cols-3 gap-x-0 items-center justify-center  gap-y-6">
           {cards.map((card, index) => (
               <motion.div
               layoutId={`card-${card.title}-${id}`}
               key={card.title}
               onClick={() => setActive(card)}
               
-              className=" flex flex-col  hover:bg-[#F2F2F2] ml-4 mr-4 h-[40vh]  dark:hover:bg-neutral-400 rounded-xl w-[30vw]  cursor-pointer">
+              className="galcard flex flex-col  hover:bg-[#F2F2F2] ml-4 mr-4 h-[40vh]  dark:hover:bg-neutral-400 rounded-xl w-[30vw]  cursor-pointer">
               <div ref={img}  id="image-hover" className="flex flex-col  w-full h-[100%]">
                 <motion.div layoutId={`image-${card.title}-${id}`} className="w-[100%]   h-[100%]">
                 <img
@@ -192,7 +192,7 @@ useLayoutEffect(() =>{
                   alt={card.title}
                   width="500"
                   height="500"
-                  className="w-full h-[100%] bg-cover  sm:rounded-tr-lg sm:rounded-tl-lg object-cover  "
+                  className="galcardimg w-full h-[100%] bg-cover  sm:rounded-tr-lg sm:rounded-tl-lg object-cover  "
                   />
                 </motion.div>
               </div>

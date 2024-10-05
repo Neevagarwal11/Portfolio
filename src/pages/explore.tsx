@@ -7,6 +7,8 @@ import { Power3, Elastic } from 'gsap';
 import resume from '../assets/NEEV AGARWAL RESUME.pdf'
 import Navbar from '../components/navbar'
 import Gallery from '../pages/page5'
+
+
 interface MagnetoProps {
   className?: string; // className is optional
   children: React.ReactNode; // children can be any React node
@@ -15,30 +17,30 @@ function explore() {
   
   const scrollContainerRef= useRef(null);
 
-  useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      duration: 3.8, 
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-      smoothWheel: true,
-      lerp: 0.1, // Adjust lerp value for smoother scrolling
+  // useEffect(() => {
+  //   // Initialize Lenis
+  //   const lenis = new Lenis({
+  //     duration: 8.8, 
+  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+  //     smoothWheel: true,
+  //     lerp: 0.1, // Adjust lerp value for smoother scrolling
 
-    });
+  //   });
 
-    lenis.scrollTo(0);
+  //   lenis.scrollTo(0);
 
-    function raf(time:number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+  //   function raf(time:number) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
 
-    requestAnimationFrame(raf); 
-    lenis.on('scroll', ScrollTrigger.update);
+  //   requestAnimationFrame(raf); 
+  //   lenis.on('scroll', ScrollTrigger.update);
 
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, []);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -90,9 +92,11 @@ function explore() {
           },
         });
 
-        
+        t.from(scr,{
+          x:'-100'
+        })
           t.to(scr , {
-            x:"300",
+            x:"100",
             duration:3,
             scrub:2
           })
@@ -254,11 +258,13 @@ useLayoutEffect(() =>{
   })
 
 
+
+
   return (
     <>
+    <div ref={scrollContainerRef} className='cursor-none absolute w-full h-screen absolute '>
     <Navbar></Navbar>
     <div id='cursor' className='cursor w-[13px] h-[13px] rounded-full  bg-[#D8D1CB] pointer-events-none	 fixed  z-[1000]'></div>
-    <div ref={scrollContainerRef} className='cursor-none absolute w-full h-screen '>
 
 {/* Intro */}
     <div id='main' className='w-full relative h-screen bg-[#1D1917]  flex flex-row overflow-x-hidden'>
@@ -266,16 +272,16 @@ useLayoutEffect(() =>{
         <div className='w-[55%] h-[70%] rounded-[40px] overflow-hidden  '><img src={photo} alt=""  className='w-[100%] h-[100%]'/></div>
       </div>
 
-      <div className='right  font-["migra"] flex-col text-2xl text-[#B09E94] w-[50%] h-full flex items-center justify-center'>
-        <div className='para w-[55%]  h-[50%]'>
+      <div className='exright  font-["migra"] flex-col text-2xl text-[#B09E94] w-[50%] h-full flex items-center justify-center'>
+        <div id='exploretext' className='para w-[55%]  h-[50%]'>
           <h3 className='font-[700]'>Nice to meet you all.</h3>
           <p className='mt-8 font-[500] leading-0'>I am Neev Agarwal from Chennai and currently pursuing my undergrad in Computer Science with AI&Ml at SRM ktr Campus. I've had an experience of 2 years in Frontend Web Development and have explored many frameworks and techniques to deliver modern and optimized websites. Still learning a lot and building cool stuffs. </p>
         </div>
 
 
-        <a href={resume} id='btn' download="Neev Agarwal Resume" className='w-[60%] h-[17%]'>
-        <div  ref={magnetoRef} className=' w-[60%] z-10  h-[95%] flex items-center justify-center'>
-          <div ref={btntextRef} className='w-[70%] z-10 h-[45%] rounded-[15px] bg-[#B09E94] text-[#1D1917] p-2 font-["migra"] font-[600]'>
+        <a href={resume} id='exbtn' download="Neev Agarwal Resume" className='w-[60%] h-[17%]'>
+        <div id='exbtncontainer'  ref={magnetoRef} className=' w-[60%] z-10  h-[95%] flex items-center justify-center'>
+          <div id='exbtndiv' ref={btntextRef} className='w-[70%] z-10 h-[45%] rounded-[15px] bg-[#B09E94] text-[#1D1917] p-2 font-["migra"] font-[600]'>
             Download Resume
             </div>
         </div>
@@ -289,37 +295,35 @@ useLayoutEffect(() =>{
 
 
 {/* Scroller */}
-    <div className='w-full h-[70vh] overflow-x-hidden bg-[#1D1917] font-["migra"]  text-[#B09E94]'>
+    <div id='scrollercontainer' className='w-full h-[70vh] overflow-x-hidden bg-[#1D1917] font-["migra"]  text-[#B09E94]'>
 
       <div className='scroller1 flex flex-row w-full h-[20%]   gap-4'>
 
         <div id='scroller-element' ref={scroller} className=''>
-          <div className='text-[5vw] whitespace-nowrap	'> Dreaming / Trading / Gyming / Coding / Sleeping/</div>
+          <div className='scrollertext text-[5vw] whitespace-nowrap	'> Dreaming / Trading / Gyming / Coding / Sleeping/</div>
         </div>
         <div id='scroller-element' ref={scroller} className=''>
-          <div className='text-[5vw] whitespace-nowrap	'> Dreaming / Trading / Gyming / Coding / Sleeping/</div>
+          <div className='scrollertext  text-[5vw] whitespace-nowrap	'> Dreaming / Trading / Gyming / Coding / Sleeping/</div>
         </div>
       </div>
 
 {/* Second Scroller */}
       <div className='scroller2 flex flex-row w-full h-[40%] flex items-center translate-x-[-16vw]  gap-4'>
 
-        <div id='scroller-element' ref={scrollerleft} className=''>
+        <div id='scroller-element2' ref={scrollerleft} className=''>
           <div className='text-[12vw] whitespace-nowrap'>Kanncomp India | Kanncomp India |</div>
         </div>
-        <div id='scroller-element' ref={scroller} className=''>
-          <div className='text-[9vw] whitespace-nowrap'> Dreaming / Trading / Gyming / Coding / Sleeping/</div>
-        </div>
+        
       </div>
 
 {/* Third Scroller */}
       <div className='scroller3 flex flex-row w-full h-[20%]  gap-[7vw]'>
 
         <div id='scroller-element' ref={scroller} className=''>
-          <div className='text-[5vw] whitespace-nowrap	translate-x-[6vw]'> Crafting Pixel-Perfect Experiences, One Line at a Time.</div>
+          <div className='scrollertext  text-[5vw] whitespace-nowrap	translate-x-[6vw]'> Crafting Pixel-Perfect Experiences, One Line at a Time.</div>
         </div>
         <div id='scroller-element' ref={scroller} className=''>
-          <div className='text-[5vw] whitespace-nowrap	'>Crafting Pixel-Perfect Experiences, One Line at a Time.</div>
+          <div className='scrollertext text-[5vw] whitespace-nowrap	'>Crafting Pixel-Perfect Experiences, One Line at a Time.</div>
         </div>
       </div>
 
