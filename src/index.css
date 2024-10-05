@@ -43,6 +43,10 @@
 html , body{
   overflow-x: hidden;
   height: 100%;
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none;    /* For Firefox */
+  -ms-user-select: none; 
 
 }
 /* Ensure the scroll container takes up full height */
@@ -507,6 +511,7 @@ padding: 0;
 .galcard{
   width: 43vw;
   height: 20vh;
+  max-height: 60vh;
   margin-right: 0vw;
   margin-left: 1vw;
   overflow: hidden;
@@ -516,4 +521,40 @@ padding: 0;
   /* aspect-ratio:auto; */
   object-fit:fill;
 }
+.open-div{
+  width: 80vw;
+  min-height: 40vh;
+  max-height: 80vh;
+ border-radius: 40px; 
+}
+.opendesc{
+  font-size: 7vw;
+  
+}
+.openimg{
+  object-fit: fill;
+}
+.opentext{
+  font-size: 5.5vw;
+  line-height: 6.5vw;
+    max-height: 130%;
+    min-height: 100%;
+  }
+  
+  .opentitle{
+    color: #B09E94;
+  }
+  #main-container{
+    overflow-x:hidden ;
+  }
+  #navinner::after{
+    content: "Open in Laptop/Desktop for the most interactive experience.";
+    /* border: 2px solid red; */
+    font-size: 2vw;
+    top: 0;
+    line-height: 1rem;
+    /* width: 90%; */
+    position: absolute;
+    right: 2%;
+  }
 }

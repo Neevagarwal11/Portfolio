@@ -102,30 +102,11 @@ useLayoutEffect(() =>{
         <AnimatePresence>
           {active && typeof active === "object" ? (
             <div className="fixed inset-0  grid place-items-center z-[100]">
-              <motion.button
-                key={`button-${active.title}-${id}`}
-                layout
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: {
-                    duration: 0.05,
-                  },
-                }}
-                className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
-                onClick={() => setActive(null)}
-              >
-                <CloseIcon />
-              </motion.button>
+          
               <motion.div
                 layoutId={`card-${active.title}-${id}`}
                 ref={ref}
-                className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+                className=" open-div w-full max-w-[500px]  h-full md:h-fit md:max-h-[100%]  flex flex-col bg-black dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
               >
                 <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
@@ -133,7 +114,7 @@ useLayoutEffect(() =>{
   alt={active.title}
   width="500"
   height="500"
-  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover "
+  className="openimg w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover "
 />
                 </motion.div>
    
@@ -142,13 +123,13 @@ useLayoutEffect(() =>{
                     <div className="">
                       <motion.h3
                         layoutId={`title-${active.title}-${id}`}
-                        className="font-[700] text-[1.6vw] font-['aftesto'] font-[#1D1917] dark:text-neutral-200 text-base"
+                        className="opentitle font-[700]  text-[1.6vw] font-['aftesto'] font-[#1D1917] dark:text-neutral-200 text-[#B09E94] text-base"
                       >
                         {active.title}
                       </motion.h3>
                       <motion.p
                         layoutId={`description-${active.description}-${id}`}
-                        className="text-neutral-600 dark:text-neutral-400 text-[1.4vw] font-[600] font-['degular-light'] text-base"
+                        className="opendesc text-neutral-600 dark:text-neutral-400 text-[1.4vw] font-[600] font-['degular-light'] text-base"
                       >
                         {active.description}
                       </motion.p>
@@ -161,7 +142,7 @@ useLayoutEffect(() =>{
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="text-neutral-600 font-['migra'] leading-[1.3rem] text-[1.1vw] md:text-sm-medium:text-base h-40 md:h-fit pb-4 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                      className="opentext text-neutral-600  font-['migra'] leading-[1.3rem] text-[1.1vw] md:text-sm-medium:text-base h-40 md:h-fit pb-4 flex flex-col items-start gap-8 overflow-auto  [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                     >
                       {typeof active.content === "function"
                         ? active.content()
