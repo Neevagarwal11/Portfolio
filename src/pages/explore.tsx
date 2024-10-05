@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import photo from '../assets/personal.jpg'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,31 +16,33 @@ interface MagnetoProps {
 function explore() {
   
   const scrollContainerRef= useRef(null);
+  const [isInitialScroll, setIsInitialScroll] = useState(true);
 
-  // useEffect(() => {
-  //   // Initialize Lenis
-  //   const lenis = new Lenis({
-  //     duration: 8.8, 
-  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-  //     smoothWheel: true,
-  //     lerp: 0.1, // Adjust lerp value for smoother scrolling
+  useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      duration: 3.8, 
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+      smoothWheel: true,
 
-  //   });
+    });
 
-  //   lenis.scrollTo(0);
+    if (isInitialScroll) {
+      lenis.scrollTo(0);
+      setIsInitialScroll(false);
+    }
+    function raf(time:number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-  //   function raf(time:number) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
+    requestAnimationFrame(raf); 
+    lenis.on('scroll', ScrollTrigger.update);
 
-  //   requestAnimationFrame(raf); 
-  //   lenis.on('scroll', ScrollTrigger.update);
-
-  //   return () => {
-  //     lenis.destroy();
-  //   };
-  // }, []);
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   gsap.registerPlugin(ScrollTrigger);
 
