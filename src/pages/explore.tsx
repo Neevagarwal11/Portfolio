@@ -45,7 +45,6 @@ function explore() {
   }, []);
 
   gsap.registerPlugin(ScrollTrigger);
-
   const scroller = useRef<HTMLDivElement | null>(null);
 //Right Scroller
   useLayoutEffect(() =>{
