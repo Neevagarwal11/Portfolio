@@ -35,7 +35,7 @@ function explore() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
+    
     requestAnimationFrame(raf); 
     lenis.on('scroll', ScrollTrigger.update);
 
