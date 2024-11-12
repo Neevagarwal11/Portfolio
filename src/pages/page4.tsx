@@ -56,15 +56,58 @@ function page4() {
     //Reveal Animation
     useLayoutEffect(() => {
       let ctx  = gsap.context(() =>{
+      let mm  = gsap.matchMedia();
 
         const head = document.querySelector("#heading");
         const ele = document.querySelectorAll(".content")
+
+
+
+        mm.add("(min-width: 1024px)", () => {
+          const t = gsap.timeline({
+            scrollTrigger: {
+              trigger: "#master",
+              start: "top top",
+              end: "bottom top",
+              markers: true,
+            },
+          });
+
+          t.to(head,{
+            opacity:1,
+          })
+
+
+          
+        const time = gsap.timeline({
+          scrollTrigger:{
+            trigger:"#master",
+            start:"top 80%",
+            end:"bottom top ",
+            markers:true,
+            scrub:true
+          }
+        })
+
+        time.to(ele , {
+          opacity:1,
+          // skewX:"0deg",
+          translateY:"-40px",
+          delay:0.2,
+          duration:2,
+          stagger:1
+
+        })
+  
+        });
+  
+// vdsvsd
         const t = gsap.timeline({
           scrollTrigger:{
             trigger:"#master",
             start:"top bottom",
             end:"bottom top ",
-            // markers:true
+            markers:true
           }
         })
 
@@ -98,6 +141,7 @@ function page4() {
       })
     })
 
+    
 
   return (
 
@@ -113,13 +157,13 @@ function page4() {
           <div id='language'  className='Languages  flex items-center justify-between flex-col py-4 w-full h-[30%] '>
             <div id='heading' className='head opacity-0 text-4xl'>Languages</div>
 
-            <div id='elecontainer' className='content opacity-[0]	 w-full h-[100%] flex justify-between py-8 flex-row gap-6  px-2'>
+            <div id='elecontainer' className='content opacity-[0]	w-full h-[100%] flex justify-between py-8 flex-row gap-6  px-2'>
 
               {tech.map((item , index) =>(
-                <div id='p4ele'  className=' h-[50%] px-4 gap-2 justify-around overflow-hidden translate-y-10 items-center relative flex flex-row rounded-full border-[1px]'>
+                <div id='p4ele'  className=' h-[50%] gap-12 justify-around px-6 py-4 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
                   <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
 
-                  <div id='name' className='name  h-full text-2xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
+                  <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
                 </div>
               ))}
             </div>
@@ -136,11 +180,11 @@ function page4() {
             <div  id='elecontainer' className='content opacity-0 w-full h-[90%] flex justify-between flex-row py-8 gap-6  p-2'>
 
               {web.map((item , index) =>(
-                <div id='p4ele' className=' h-[50%] translate-y-[40px] px-4 gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
-                  <div id='p4eleimg' className='img  h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
+                <div id='p4ele'  className=' h-[50%] gap-12 justify-around px-6 py-4 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
+                <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
 
-                  <div id='name' className='name  h-full text-2xl w-[80%] font-["degular-light"] flex items-center justify-center '>{item.name}</div>
-                </div>
+                <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
+              </div>
               ))}
             </div>
             
@@ -156,11 +200,11 @@ function page4() {
             <div  id='elecontainer' className='content w-full   opacity-0 h-[90%] flex justify-center flex-row py-8 gap-6  p-2'>
 
               {tools.map((item , index) =>(
-                <div id='p4ele' className=' h-[60%] px-4 translate-y-[40px] gap-2 justify-around overflow-hidden items-center relative flex flex-row rounded-full border-[1px]'>
-                  <div id='p4eleimg' className='img  h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full w-full  bg-center' /> </div>
- 
-                  <div  id='name'  className='name  w-[70%] h-full text-2xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
-                </div>
+                <div id='p4ele'  className=' h-[50%] gap-12 justify-around px-6 py-4 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
+                <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
+
+                <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
+              </div>
               ))}
             </div>
             

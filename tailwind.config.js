@@ -4,8 +4,13 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}", // Adjust this based on your project structure
   ],
+
   theme: {
-    extend: {},
+    extend: {
+      screens:{
+        '4xl':"2560px",
+      },
+    },
   },
   plugins: [],
 }
