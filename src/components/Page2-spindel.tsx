@@ -9,6 +9,8 @@ function spindel() {
 
 
     useLayoutEffect(() => {
+      let mm  = gsap.matchMedia();
+
         let ctx = gsap.context(() => {
           const t = gsap.timeline({
             scrollTrigger: {
@@ -23,6 +25,23 @@ function spindel() {
             scrub:1,
           });
         }, spindelRef); // Ensure gsap context is using the correct reference
+
+
+
+        mm.add("(max-width: 767px)", () => {
+
+          const t = gsap.timeline({
+            scrollTrigger: {
+              trigger: spindelRef.current, // Set trigger to the reference element
+              scrub: 1,
+              markers:true,
+            },
+          });
+
+        })
+
+
+
     
         return () => ctx.revert();
       }, []);

@@ -69,7 +69,7 @@ function page4() {
               trigger: "#master",
               start: "top top",
               end: "bottom top",
-              markers: true,
+              // markers: true,
             },
           });
 
@@ -84,7 +84,7 @@ function page4() {
             trigger:"#master",
             start:"top 80%",
             end:"bottom top ",
-            markers:true,
+            // markers:true,
             scrub:true
           }
         })
@@ -107,7 +107,7 @@ function page4() {
             trigger:"#master",
             start:"top bottom",
             end:"bottom top ",
-            markers:true
+            // markers:true
           }
         })
 
@@ -160,7 +160,7 @@ function page4() {
             <div id='elecontainer' className='content opacity-[0]	w-full h-[100%] flex justify-between py-8 flex-row gap-6  px-2'>
 
               {tech.map((item , index) =>(
-                <div id='p4ele'  className=' h-[50%] gap-12 justify-around px-6 py-4 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
+                <div id='p4ele'  className=' h-[50%] 4xl:gap-12 gap-2 px-2  justify-around 4xl:px-6 4xl:py-2 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
                   <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
 
                   <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
@@ -180,7 +180,7 @@ function page4() {
             <div  id='elecontainer' className='content opacity-0 w-full h-[90%] flex justify-between flex-row py-8 gap-6  p-2'>
 
               {web.map((item , index) =>(
-                <div id='p4ele'  className=' h-[50%] gap-12 justify-around px-6 py-4 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
+                <div id='p4ele'  className=' h-[50%] 4xl:gap-12 gap-2 px-2 justify-around 4xl:px-6 4xl:py-2 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
                 <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
 
                 <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
@@ -200,7 +200,7 @@ function page4() {
             <div  id='elecontainer' className='content w-full   opacity-0 h-[90%] flex justify-center flex-row py-8 gap-6  p-2'>
 
               {tools.map((item , index) =>(
-                <div id='p4ele'  className=' h-[50%] gap-12 justify-around px-6 py-4 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
+                <div id='p4ele'  className=' h-[50%] 4xl:gap-12 gap-2 px-2  justify-around 4xl:px-6 4xl:py-2 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
                 <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
 
                 <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
