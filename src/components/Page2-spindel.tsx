@@ -34,7 +34,7 @@ function spindel() {
             scrollTrigger: {
               trigger: spindelRef.current, // Set trigger to the reference element
               scrub: 1,
-              markers:true,
+              // markers:true,
             },
           });
 

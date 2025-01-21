@@ -19,6 +19,8 @@ import figma from '../assets/figma.png'
 import tally from '../assets/tally.webp'
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import node from '../assets/nodejs.png'
+import postman from '../assets/postman.webp'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,11 +42,13 @@ function page4() {
       {name:'Vite' , img:vite},
       {name:'ExpressJS' , img:ep},
       {name:'Tailwind' , img:tail},
+      {name:'NodeJs' , img:node},
     ]
 
     const tools =[
       {name:"Git" , img:git},
       {name:"Github" , img:github},
+      {name:"Postman" , img:postman},
       {name:"TradingView" , img:trading},
       {name:"Figma" , img:figma},
       {name:"Canva" , img:canva},
@@ -200,8 +204,8 @@ function page4() {
             <div  id='elecontainer' className='content w-full   opacity-0 h-[90%] flex justify-center flex-row py-8 gap-6  p-2'>
 
               {tools.map((item , index) =>(
-                <div id='p4ele'  className=' h-[50%] 4xl:gap-12 gap-2 px-2  justify-around 4xl:px-6 4xl:py-2 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
-                <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
+                <div id='p4ele'  className=' h-[50%] 4xl:gap-12 gap-2 p-2   justify-around 4xl:px-6 4xl:py-2 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
+                <div id='p4eleimg' className='img   h-[100%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
 
                 <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
               </div>

@@ -241,9 +241,10 @@ padding: 0;
 
 /* Page3 */
 #p3elem{
-  /* border: 2px solid red; */
+  border: 2px solid red;
+  height: 80vh;
   flex-direction: column;
-  gap: 4vw;
+  gap: 2vw;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -251,13 +252,13 @@ padding: 0;
 #imgbox{
   width: 100%;
   position: absolute;
-  bottom: 0.5%;
+  bottom: 5%;
   left: 0%;
   height: 30%;
   
 }
 #p3para{
-  font-size: 9.5vw;
+  font-size: 8vw;
   padding-top:4%;
   padding-left:5%;
   width: 100%;
