@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import java from '../assets/java.png'
 import js from '../assets/js.png'
 import cpp from '../assets/cpp.png'
@@ -21,6 +21,10 @@ import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import node from '../assets/nodejs.png'
 import postman from '../assets/postman.webp'
+import nextjs from '../assets/next-js.png'
+import mongodb from '../assets/mongodb.png'
+import { motion } from "framer-motion";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,10 +43,12 @@ function page4() {
       {name:'HTML' , img:html},
       {name:'CSS' , img:css},
       {name:'ReactJS' , img:react},
+      {name:'NextJs' , img:nextjs},
       {name:'Vite' , img:vite},
       {name:'ExpressJS' , img:ep},
       {name:'Tailwind' , img:tail},
       {name:'NodeJs' , img:node},
+      {name:'MongoDB' , img:mongodb},
     ]
 
     const tools =[
@@ -56,9 +62,13 @@ function page4() {
     ]
 
 
+  const [isMobile, setIsMobile] = useState(false);
 
     //Reveal Animation
     useLayoutEffect(() => {
+
+      if(!isMobile){
+
       let ctx  = gsap.context(() =>{
       let mm  = gsap.matchMedia();
 
@@ -143,87 +153,124 @@ function page4() {
         })
         return () => ctx.revert();
       })
-    })
+    }
+    },[isMobile])
 
+
+
+     // 🧠 Detect mobile or desktop once on mount
+  useLayoutEffect(() => {
+    const mql = window.matchMedia("(max-width: 1023px)");
+    setIsMobile(mql.matches);
+
+    const handleResize = () => setIsMobile(mql.matches);
+    mql.addEventListener("change", handleResize);
+
+    return () => mql.removeEventListener("change", handleResize);
+  }, []);
+
+    // ✅ Mobile version uses Framer Motion instead of GSAP
+  const motionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+  const renderItems = (data: any[]) => (
+    <div
+      id="elecontainer"
+      className="content w-full grid grid-cols-3  grid-flow-row-dense lg:flex lg:justify-center justify-between gap-6 py-4"
+    >
+      {data.map((item, index) =>
+        isMobile ? (
+          <motion.div
+            key={index}
+            variants={motionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="h-[50px] border px-4 flex items-center gap-3 mb-8 rounded-full  border-gray-500"
+          >
+            <div className="h-[30px] w-[30px] rounded-full overflow-hidden">
+              <img
+                src={item.img}
+                alt={item.name}
+                className="h-[100%] w-full object-cover"
+              />
+            </div>
+            <div className="text-sm px-2 font-semibold text-white">{item.name}</div>
+          </motion.div>
+        ) : (
+          <div
+            key={index}
+            id="p4ele"
+            className="h-[50%] gap-2 px-2 py-2 justify-around overflow-hidden translate-y-10 items-center flex flex-row rounded-full border-[1px]"
+          >
+            <div className="img h-[70%] overflow-hidden rounded-full">
+              <img src={item.img} alt="" className="lg:h-[5vh] lg:w-[2vw] bg-center" />
+            </div>
+            <div className="name h-full text-2xl font-['degular-light'] flex items-center justify-center">
+              {item.name}
+            </div>
+          </div>
+        )
+      )}
+    </div>
+)
     
 
   return (
-
-    <div id='p4main' className='w-full h-[130vh]  bg-[#1D1917] flex items-center justify-center'>
-      <div id='p4inner' className='w-[80%] h-[90%]  flex flex-col items-center  justify-center border-green-300'>
-        <div id='tech' className='w-[40%] h-[10%] font-["degular-light"] flex items-end justify-center font-[800] text-6xl ' > Tech Stack</div>
-
-
-{/* ALL the Tech Stack Content */}
-        <div id='master' className='w-[90%] h-[90%]'>
-
-          {/* Languages */}
-          <div id='language'  className='Languages  flex items-center justify-between flex-col py-4 w-full h-[30%] '>
-            <div id='heading' className='head opacity-0 text-4xl'>Languages</div>
-
-            <div id='elecontainer' className='content opacity-[0]	w-full h-[100%] flex justify-between py-8 flex-row gap-6  px-2'>
-
-              {tech.map((item , index) =>(
-                <div id='p4ele'  className=' h-[50%] 4xl:gap-12 gap-2 px-2  justify-around 4xl:px-6 4xl:py-2 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
-                  <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
-
-                  <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
-                </div>
-              ))}
-            </div>
-            
-          </div>
-
-
-              {/*WEB TECH  */}
-          <div id='language' className='Languages  flex items-center px-12 justify-between flex-col py-8 w-full h-[33%]'>
-
-
-            <div id='heading' className='head text-4xl'>Web Technologies</div>
-
-            <div  id='elecontainer' className='content opacity-0 w-full h-[90%] flex justify-between flex-row py-8 gap-6  p-2'>
-
-              {web.map((item , index) =>(
-                <div id='p4ele'  className=' h-[50%] 4xl:gap-12 gap-2 px-2 justify-around 4xl:px-6 4xl:py-2 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
-                <div id='p4eleimg' className='img   h-[70%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
-
-                <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
-              </div>
-              ))}
-            </div>
-            
-          </div>
-
-
-          {/* TOOLs */}
-          <div  id='language' className='Languages  flex items-center px-12 justify-start flex-col py-8 w-full h-[33%]'>
-
-
-            <div id='heading' className='head text-4xl'>Tools / Platforms</div>
-
-            <div  id='elecontainer' className='content w-full   opacity-0 h-[90%] flex justify-center flex-row py-8 gap-6  p-2'>
-
-              {tools.map((item , index) =>(
-                <div id='p4ele'  className=' h-[50%] 4xl:gap-12 gap-2 p-2   justify-around 4xl:px-6 4xl:py-2 overflow-hidden translate-y-10 items-center  flex flex-row rounded-full border-[1px]'>
-                <div id='p4eleimg' className='img   h-[100%] overflow-hidden rounded-full '> <img src={item.img} alt="" className='h-full  bg-center' /> </div>
-
-                <div id='name' className='name  h-full text-2xl 4xl:text-4xl font-["degular-light"] flex items-center justify-center '>{item.name}</div>
-              </div>
-              ))}
-            </div>
-            
-          </div>
-
-
-
-
-
+    <div
+      id="p4main"
+      className="w-full bg-[#1D1917] flex items-center justify-center"
+    >
+      <div
+        id="p4inner"
+        className="w-[100%] flex flex-col items-center justify-center"
+      >
+        <div
+          id="tech"
+          className="w-full text-center text-5xl font-bold text-white mb-10"
+        >
+          Tech Stack
         </div>
 
+        <div id="master" className="w-full  h-full ">
+          {/* Languages */}
+          <div className="flex flex-col items-center">
+            <div
+              id="heading"
+              className="head opacity-0 text-3xl md:text-4xl text-white mb-4"
+            >
+              Languages
+            </div>
+            {renderItems(tech)}
+          </div>
 
+          {/* Web Technologies */}
+          <div className="flex flex-col items-center">
+            <div
+              id="heading"
+              className="head opacity-1 text-3xl md:text-4xl text-white mb-4"
+            >
+              Web Technologies
+            </div>
+            {renderItems(web)}
+          </div>
+
+          {/* Tools / Platforms */}
+          <div className="flex flex-col gap-2 items-center">
+            <div
+              id="heading"
+              className="head opacity-1 text-3xl md:text-4xl text-white mb-4"
+            >
+              Tools / Platforms
+            </div>
+            {renderItems(tools)}
+          </div>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default page4

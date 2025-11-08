@@ -241,30 +241,33 @@ padding: 0;
 
 /* Page3 */
 #p3elem{
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: 80vh;
   flex-direction: column;
-  gap: 2vw;
   position: relative;
-  justify-content: center;
+  justify-content:space-around;
+  gap: 1vw;
   align-items: center;
 }
 #imgbox{
   width: 100%;
   position: absolute;
-  bottom: 5%;
+  /* bottom: 5%; */
   left: 0%;
   height: 30%;
-  
+  scale:1,
+}
+#image{
+  scale: 1;
 }
 #p3para{
-  font-size: 8vw;
+  font-size: 6vw;
   padding-top:4%;
   padding-left:5%;
   width: 100%;
   /* border: 2px solid red; */
   line-height: 1;
-  height: 40%;
+  height: 10%;
   position: absolute;
   top: 20%;
 }

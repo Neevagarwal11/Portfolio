@@ -14,7 +14,7 @@
 
     return (
       
-      <div className='main w-full h-screen  4xl:overflow-x-hidden'>
+      <div className='main   4xl:overflow-x-hidden'>
         <BrowserRouter>
         <ScrollToTop/>
         <Routes>

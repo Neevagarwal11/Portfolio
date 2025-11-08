@@ -3,7 +3,7 @@ import Spindel from '../assets/Page2-spindel.svg'
 
 function page2_5() {
   return (
-    <div id='p2-5' className='w-full h-screen whitespace-nowrap	 bg-[#1D1917] flex items-center'>
+    <div id='p2-5' className='w-full h-2/5 py-4 whitespace-nowrap	 bg-[#1D1917] flex items-center'>
 
         <div className='scroller flex gap-[10vw] ' id='scroller'>
             <div className='text-[20vw] flex flex-row items-center gap-[2vw] px-8' >PORTFOLIO <img src={Spindel} alt="" /></div>

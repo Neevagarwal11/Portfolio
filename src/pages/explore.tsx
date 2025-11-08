@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
 import { Power3, Elastic } from 'gsap';
-import resume from '../assets/NEEV AGARWAL RESUME.pdf'
+import resume from "../assets/Neev's Resume SDE.pdf"
 import Navbar from '../components/navbar'
 import Gallery from '../pages/page5'
 
